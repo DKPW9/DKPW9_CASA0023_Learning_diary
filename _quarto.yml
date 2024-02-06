@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "trial"
-  author: "Norah Jones"
+  title: "Remotely sensing cities and environments: learning diary"
+  author: "Hannah Schuller"
   date: "2/6/2024"
   chapters:
     - index.qmd
@@ -18,7 +18,7 @@ bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: united
   pdf:
     documentclass: scrreprt
 
