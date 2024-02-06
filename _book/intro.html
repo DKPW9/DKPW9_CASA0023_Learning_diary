@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>trial - 1&nbsp; Introduction to remote sensing</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to remote sensing</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">trial</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to me</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to remote sensing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">1.1</span> Summary</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">1.2</span> Applications</a></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">1.3</span> Reflections</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.4</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to remote sensing</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="summary" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.1</span> Summary</h2>
+<p>This lecture felt like it very much served as a ‘Remote sensing 101’; we looked at what remote sensing actually is, the two different kinds of sensors (passive versus active), the ways in which data collected by sensors interact with both the earth and the atmosphere and finally the 4 resolutions of remotely sensed data. All of this was used to demonstrate that there is no one sensor for all applications - the kind of research you’re undertaking will dictate which sensor and what kind of data is appropriate. To consolidate what we learnt in class, I produced a summary sheet of the taught content, displayed below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week1_summary.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Week 1 summary sheet</figcaption>
+</figure>
+</div>
+</section>
+<section id="applications" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">1.2</span> Applications</h2>
+<p>Coming from a background in remote sensing for environmental monitoring that has seen me use SNAP &amp; R quite extensively, I decided it best to dedicate my study time in week 1 to consider applications of remote sensing data that I was unfamiliar with. Quite often during my undergraduate degree I found myself falling into a trap of believing that anything that lay beyond the confines of strictly quantitative and highly scientific research was a waste of time and not worth paying attention to. Only now that I’ve graduated am I realising how narrow-minded and naive this perspective is; it really came to mind when during the lecture we were reminded that given the plethora of potential applications of remotely sensed data, there is no singular best sensor or optimum spatial/spectral/temporal resolution.&nbsp;</p>
+<p>So, in an attempt to fix my old way of thinking, I am starting off CASA0023 and this learning diary by researching applications of remote sensing that sit beyond the confines of physical geography. To have some fun with it, I decided to try and find an example of a time remotely sensed data was used to address an unusual topic for every letter of the alphabet. I used a random word generator (<a href="https://randomwordgenerator.com/" class="uri">https://randomwordgenerator.com/</a>) to offer me a word which served as the starting point of my research. Below I have provided a brief description of articles that I came across during my research, many of which prompted me to fall down a rabbit hole of literature that I’d never come across before.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">A</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">B</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">C</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">D</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">E</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false">F</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false">G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false">H</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-9-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-9" role="tab" aria-controls="tabset-1-9" aria-selected="false">I</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-10-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-10" role="tab" aria-controls="tabset-1-10" aria-selected="false">J</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-11-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-11" role="tab" aria-controls="tabset-1-11" aria-selected="false">K</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-12-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-12" role="tab" aria-controls="tabset-1-12" aria-selected="false">L</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-13-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-13" role="tab" aria-controls="tabset-1-13" aria-selected="false">M</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-14-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-14" role="tab" aria-controls="tabset-1-14" aria-selected="false">N</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-15-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-15" role="tab" aria-controls="tabset-1-15" aria-selected="false">O</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-16-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-16" role="tab" aria-controls="tabset-1-16" aria-selected="false">P</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-17-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-17" role="tab" aria-controls="tabset-1-17" aria-selected="false">Q</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-18-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-18" role="tab" aria-controls="tabset-1-18" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-19-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-19" role="tab" aria-controls="tabset-1-19" aria-selected="false">S</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-20-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-20" role="tab" aria-controls="tabset-1-20" aria-selected="false">T</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-21-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-21" role="tab" aria-controls="tabset-1-21" aria-selected="false">U</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-22-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-22" role="tab" aria-controls="tabset-1-22" aria-selected="false">v</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-23-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-23" role="tab" aria-controls="tabset-1-23" aria-selected="false">W</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-24-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-24" role="tab" aria-controls="tabset-1-24" aria-selected="false">X</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-25-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-25" role="tab" aria-controls="tabset-1-25" aria-selected="false">Y</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-26-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-26" role="tab" aria-controls="tabset-1-26" aria-selected="false">Z</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><strong>Adolescent</strong> vulnerability in Indonesia: Toharudin <em>et al.,</em> 2017</p>
+<p>Toharudin <em>et al.,</em> 2017 examined mental health issues in adolescents in Indonesia by combining a variety of variables including mobile phone usage, emotional disorder classifications, travel experiences as well as night light remote sensing data to see how behavioural disorders varied between young people in urban versus rural areas.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Classifying punches in Olympic <strong>boxing</strong> using static RGB cameras: Stefański <em>et al.,</em> 2023</p>
+<p>Stefański <em>et al.,</em> 2023 sought to propose a solution to address current issues regarding the classification of punches in Olympic boxing by using static RGB cameras opposite the ring to track and then classify athlete moves. This challenged conventional approaches to track athletes in combat sports that see athletes require wearable sensors.</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>On-site <strong>cocaine</strong> detection with an integrated near-infrared spectral sensor: Kranenburg <em>et al.,</em> 2022</p>
+<p>In response to the all-time high of illegal drug production/trafficking/seizures/usage, Kranenburg <em>et al.,</em> 2022 explore the concept of an on-site drug detection device that uses a NIR spectral sensor that can be integrated into a smart phone. Their testing found the sensor to successfully exploit an array of resonant-cavity enhanced photodetectors to correctly classify 11 common illicit drugs 100% of the time. This is achieved by chemometric modelling of the response of 15 wavelength-specific pixels (chemometric is just a fancy word for mathematical methods that analyse chemical data).</p>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p><strong>Dinosaur</strong> fossils discovered using remotely piloted aircraft systems: Herridge-Berry <em>et al.,</em> 2021</p>
+<p>Digging for dinosaur remains is limited by the typically inaccessible terrain surrounding potential archeological sites. Herridge-Berry <em>et al.,</em> 2021 however offer a proof-of-concept test for the remote sensing of fossils (specifically ‘vertebrate boneheads’) in Dinosaur Provincial Park, Alberta as the case study. Due to the small size of most fossils, they suggest using Spectral Mixture Analysis after collecting data obtained by deploying a RGB camera onto a plane flying over a study site.</p>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<p>Advancing the <strong>egg</strong> industry using non-destructive optical sensing technologies: Ahmed <em>et al.</em> 2023</p>
+<p>In acknowledgement of eggs being one of the best sources of protein and one of the most popular foods worldwide, Ahmed <em>et al.</em> 2023 wrote a review of ways in which technologies including satellites in space and remote sensors are currently used (and can in future be used) to turn the current egg industry into ‘Industry 4.0’.</p>
+</div>
+<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<p>Predicting the distribution potential of an invasive <strong>frog</strong> in Hawaii using remotely sensed data: Bisrat <em>et al.,</em> 2011</p>
+<p>Bisrat <em>et al.,</em> 2011 used 5 biophysical variables derived from MODIS as predictors for the potential distribution of <em>Eleutherodactylus coqui</em> (commonly known as the coqui frog), a species native to Puerto Rico but non-native and dangerous to ecological systems in Hawaii.</p>
+</div>
+<div id="tabset-1-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-7-tab">
+<p>Integrating remote sensing for mapping <strong>garbage</strong> dump areas in Bahrain: Al-Joburi, 2017</p>
+<p>Garbage dumping is a prevalent issue in Bahrain, associated with worrying economic and environmental consequences. In response to this issue, Al-Joburi, 2017 was able to identify, locate and map possible garbage dump sites using Landsat imagery spanning 1972 to the present day.</p>
+</div>
+<div id="tabset-1-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-8-tab">
+<p>Remote sensing via <strong>hot air balloon</strong> across Yellowstone National Park: Planer-Friedrich <em>et al.</em> 2006</p>
+<p>Two rapidly changing hydrothermal areas in Yellowstone National Park required mapping and monitoring, however limited budgets, a lack of personnel trained in remote sensing and strict unmanned UAV rules in USA were holding back observation efforts and management strategy implementation. Planer-Friedrich <em>et al.</em> 2006 responded to this by using a hot air balloon to take photos from above the areas.</p>
+</div>
+<div id="tabset-1-9" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-9-tab">
+<p>Estimating the population size of endangered <strong>iguanas</strong> in the Galápagos using drones: Varela-Jaramillo <em>et al.,</em> 2023</p>
+<p>Varela-Jaramillo <em>et al.,</em> 2023 outline the development of a drone-based method for the estimation of population size in Galápagos marine iguanas, <em>Amblyrhynchus cristatus,</em> finding drone-based surveys to outperform ground-based counts in all tests.</p>
+</div>
+<div id="tabset-1-10" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-10-tab">
+<p>Microwave remote sensing of <strong>Jupiter’s</strong> atmosphere from an orbiting spacecraft:&nbsp;Janssen <em>et al.,</em> 2005</p>
+<p>Janssen <em>et al.,</em> 2005 demonstrate the promise of passive microwave sounding via an orbiting spacecraft to determine deep water stores in Jupiter to an accuracy that enables the discrimination of models for Jupiter’s origin.</p>
+</div>
+<div id="tabset-1-11" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-11-tab">
+<p>Estimating the Leaf Area Index (LAI) for <strong>ketchup</strong> farms using remote sensing images: Dorneles <em>et al.,</em> 2023</p>
+<p>LAI is one of the main physiological parameters of the plant related to transpiration, productivity and rainfall interception. Dorneles <em>et al.,</em> 2023 sought to measure LAI of an industrial tomato field used in ketchup production in Brazil using Sentinel-2 images so as to incorporate the parameter into improved agricultural efficiency plans.</p>
+</div>
+<div id="tabset-1-12" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-12-tab">
+<p>Satellite remote sensing informing evidence based action against forced <strong>labour</strong> camps: Boyd <em>et al.,</em> 2018</p>
+<p>Boyd <em>et al.,</em> 2018 use WorldView imagery available on Google Earth geobrowser to identify and estimate the number of brick kilns across the ‘Brick Belt’ that runs across south Asia - kilns which are known sites of modern day slavery.</p>
+</div>
+<div id="tabset-1-13" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-13-tab">
+<p>Remote sensing in <strong>movies</strong></p>
+<p>As a big movie fan, it felt only right to give Will Smith’s 1998 <em>Enemy of the State</em> a mention; a film which is an attempt (albeit incredibly over-the-top) the demonstrate the power of remote sensing and satellites. It’s a surveillance police state thriller which has all kinds of scenes which see satellite imagery used to track fugitives across the US.</p>
+</div>
+<div id="tabset-1-14" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-14-tab">
+<p>Estimating chlorophyll concentration in conifer <strong>needles:</strong> Moorthy <em>et al.,</em> 2008</p>
+<p>No longer is it impossible to find a needle in a haystack; Moorthy <em>et al.,</em> 2008 were able to detect and measure the chlorophyll concentration in Jack Pine needles, a dominant Boreal forest species using Compact Airborne Spectrographic Imager (CASI) observations obtained in the visible-near infrared domain across 8 sites in Ontario, Canada.</p>
+</div>
+<div id="tabset-1-15" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-15-tab">
+<p>Estimating the phenological stages of <strong>oranges</strong> in Iranian orchards using remote sensing: Hashemi <em>et al.,</em> 2021</p>
+<p>Hashemi <em>et al.,</em> 2021 looked to better constrain the growth of orange trees to improve agricultural models and production lines by utilising MODIS images to track the phenological stages of crops across the southeast of Fars Province in Iran.</p>
+</div>
+<div id="tabset-1-16" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-16-tab">
+<p>Tracking <strong>pirates</strong> from space: Shortland, 2012</p>
+<p>Piracy off the shores of Somalia remains a significant issue; one which requires a land-based solution. Shortland, 2012 approaches this by suggesting a host of solutions, all of which use a variety of satellite remote sensing based methods. These look at both tracking ships remotely, as well as looking at night-time light data to pinpoint suspected beneficiaries of piracy ransom money.</p>
+</div>
+<div id="tabset-1-17" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-17-tab">
+<p>Reducing traffic <strong>queue</strong> times using satellite imagery: Leitloff <em>et al.,</em> 2005</p>
+<p>Leitloff <em>et al.,</em> 2005 utilised the fine 1 metre resolution of QuickBird imagery to detect vehicle queues in urban areas to demonstrate the opportunities to use this information to reroute traffic and reduce queuing time.</p>
+</div>
+<div id="tabset-1-18" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-18-tab">
+<p>Remote sensors as an integral element of modern <strong>race car</strong> driving: Wojciechowski &amp; Wojtowicz, 2023</p>
+<p>Wojciechowski &amp; Wojtowicz, 2023 describe the over 250 active remote sensors placed on Formula 1 cars during Grand Prix races that allow teams to generate over 500GB of data. Each sensor is assigned to one of three categories: control, instrumentation, and monitoring.</p>
+</div>
+<div id="tabset-1-19" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-19-tab">
+<p>Advancements in remote sensing facilitating improved oil spill <strong>surveillance:</strong> Jha <em>et al.,</em> 2007&nbsp;</p>
+<p>Oil spill surveillance constitutes an important component of oil spill disaster management. Jha <em>et al.,</em> 2007 reviewed the benefits of various remote sensors and satellites that are currently employed in surveillance efforts; an integral part of environmental management and industrial accountability.</p>
+</div>
+<div id="tabset-1-20" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-20-tab">
+<p>Estimation of <strong>tree</strong> cover using MODIS data at global, continental and regional/local scales: Hansen <em>et al.,</em> 2005</p>
+<p>It would be wrong to include anything other than trees for T, and Hansen <em>et al.,</em> 2005 research which utilised MODIS data to map tree covers at different scales of study.</p>
+</div>
+<div id="tabset-1-21" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-21-tab">
+<p>Managing <strong>urbanisation</strong> using remote sensing: Rosni <em>et al.,</em> 2016</p>
+<p>Rosni <em>et al.,</em> 2016 monitor urban sprawl across Kuala Lumpur metropolitan area using SPOT-5 images to demonstrate the rapid urbanisation rate affecting Indonesia.</p>
+</div>
+<div id="tabset-1-22" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-22-tab">
+<p>Detection of submerged ocean <strong>vessels</strong> using remote sensing techniques: Wren <em>et al.,</em> 1997</p>
+<p>Wren <em>et al.,</em> 1997 described how remote sensing techniques can provide not only an aid but also a valuable alternative to approaches at detecting and recovering submerged vessels. Specifically, they identify the value of elevated sensors on Low Earth Orbit satellites as a powerful tool in reconnaissance missions.</p>
+</div>
+<div id="tabset-1-23" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-23-tab">
+<p>Archaeological attempts to identify ancient defence <strong>walls</strong> in China using remote sensing technology: Yue-ping &amp; Lin, 2009</p>
+<p>Several studies have attempted to develop understandings of the structure and role of ancient defences walls in China, a key part of national defence history. Yue-ping &amp; Lin, 2009 reviewed the use of these technologies in archeological work and describe how integral they are to contemporary digs.</p>
+</div>
+<div id="tabset-1-24" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-24-tab">
+<p>Attempts to measure <strong>xenophobia</strong> and global inequality: Mirza <em>et al.,</em> 2021</p>
+<p>Mirza <em>et al.,</em> 2021 outline a novel methodology that seeks to quantify xenophobia and global inequality more broadly through remotely sensed data regarding average nighttime light emitted per person. They found a significant relationship between the resulting light-based inequality indicator and existing estimates of net income inequality.</p>
+</div>
+<div id="tabset-1-25" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-25-tab">
+<p>Using USV to develop navigational and bathymetric charts of <strong>yacht</strong> ports: Specht <em>et al.,</em> 2020</p>
+<p>Specht <em>et al.,</em> 2020 argue that modern yacht ports should primarily provide vessels with navigational safety associated with their maneuvering on the approach fairway. On this basis, they employ a methodology that uses an unnamed surface vehicle (USV) to aim to define and develop unique bathymetric and navigational charts of the harbor and the approach fairway.</p>
+</div>
+<div id="tabset-1-26" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-26-tab">
+<p>Using satellite images to predict the effects of environmental change on <strong>zebra</strong> migration: Bartlam-Brooks <em>et al.,</em> 2013</p>
+<p>Habitat loss in the Anthropocene has threatened historical zebra migrations. As a result, identifying and prioritizing migration routes for conservation has taken on a new urgency. In response to this, Bartlam-Brooks <em>et al.,</em> 2013 utilised observations of precipitation from the Tropical Rainfall Measuring Mission data set and Moderate Resolution Imaging Spectroradiometer-derived normalized difference vegetation index (NDVI) to track daily zebra movements in Botswana.</p>
+</div>
+</div>
+</div>
+<p>In future weeks, I will focus on fewer studies and analyse them in greater depth. However for this week, I just wanted to read as much as possible and push the boat out in terms of what I knew and what was possible - so stay tuned!</p>
+</section>
+<section id="reflections" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">1.3</span> Reflections</h2>
+<p>I really enjoyed this introduction week! It was good to return to concepts I’d forgotten about since I last did any remote sensing and I particularly enjoyed playing around with SNAP in the practical. Not only was the process of making my summary sheet good fun (and a welcome respite from other writing/coding heavy assessments), but also a chance to remind myself of some key definitions. Specifically, I’d forgotten about all the different kinds of atmospheric corrections as in the past I’d applied mostly Raleigh corrections to data so that felt valuable ahead of week 3 which this week’s lecture mentioned would involve more information on. I also had a lot of fun pushing myself to comb through past literature and see the plethora of ways and contexts in which remote sensing data has been applied - I found the studies about adolescent behaviours, the egg industry and forced labour camps to be particularly fascinating. Whilst I have no doubt that in future weeks I will probably return to the comfort of exploring environmental applications of satellite data, this has sparked some ideas for potential topics to explore perhaps for the group project and I look forward to the rest of the course!</p>
+</section>
+<section id="references" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="references"><span class="header-section-number">1.4</span> References</h2>
+<ol type="1">
+<li>Ahmed, W., Hossainy, S.J., Khaliduzzaman, A., Emmert, J.L., Kamruzzaman, M. (2023) ‘Non-destructive optical sensing technologies for advancing the egg industry toward Industry 4.0: A review’. <em>Comprehensive Reviews in Food Science and Food Safety,</em> vol.&nbsp;22, is. 6, pp.&nbsp;4378-4403</li>
+<li>Al-Joburi, K. (2017) ‘Integrating Remote Sensing and GIS for Mapping Garbage Dump Areas in the Kingdom of Bahrain’. <em>Sustainable Civil Infrastructure (Book Series),</em> pp.&nbsp;262-271.</li>
+<li>Bartlam-Brooks, H.L.A., Beck, P.S.A., Bohrer, G., Harris, S. (2013) ‘In search of greener pastures: Using satellite images to predict the effects of environmental change on zebra migration’. <em>Journal of Geophysical Research: Biogeosciences,</em> vol.&nbsp;118, is. 4, pp.&nbsp;1427-1437.</li>
+<li>Bisrat, S.A., White, M.A., Beard, K.H., Cutler, D.R. (2011) ‘Predicting the distribution potential of an invasive frog using remotely sensed data in Hawaii’, <em>Diversity and Distributions,</em> vol.&nbsp;18, is. 7, pp.&nbsp;648-660.</li>
+<li>Boyd, D.S., Jackson, B., Wardlaw, J., Foody, G.M., Marsh, S., Bales, K. (2018) ‘Slavery from Space: Demonstrating the role for satellite remote sensing to inform evidence-based action related to UN SDG number 8’. <em>ISPRS Journal of Photogrammetry and Remote Sensing,</em> vol.&nbsp;142, pp.&nbsp;380-388.</li>
+<li>Dorneles, M.M., Brito, G.H.M., Rocha, I.J.D.F., Alves, S.M.D.F. (2023) ‘Sentinel image to estimate industrial tomato Leaf Area Index’. <em>Brazilian Archives of Biology and Technology,</em> vol.&nbsp;66.</li>
+<li>Hansen, M.C., Townshend, J.R.G., DeFries, R.S., Carroll, M. (2007) ‘Estimation of tree cover using MODIS data at global, continental and regional/local scales’. <em>International Journal of Remote Sensing,</em> vol.&nbsp;26, is. 19, pp.&nbsp;4359-4380</li>
+<li>Hashemi, A., Yazdanpanah, H., Momeni, M. (2021) ‘Estimating the Main Phenological Stages of Orange Tree Using Remote Sensing (Case Study: Southeast Orchards of Fars Province in Iran)’. <em>Geography and Environmental Planning,</em> vol.&nbsp;32, is. 2, pp.&nbsp;119-134.</li>
+<li>Herridge-Berry, S., Brown, C.M., Peddle, D.R., Pickles, B.J., Coburn, C.A. (2021) ‘Dinosaur fossil discovery using remotely piloted aircraft systems and spectral mixture analysis’. <em>Canadian Society of Vertebrate Palaeontology,</em> vol 9, pp.&nbsp;1-39.</li>
+<li>Janssen, M.A., Hofstadter, M.D., Gulkis, S., Ingersoll, A.P., Allison, M., Bolton, S.J., Levin, S.M., Kamp, L.W. (2005) ‘Microwave remote sensing of Jupiter’s atmosphere from an orbiting spacecraft’. <em>Icarus,</em> vol.&nbsp;173, is. 2, pp.&nbsp;447-453.</li>
+<li>Jha, M.N., Levy, J., Gao, Y. (2008) ‘Advances in Remote Sensing for Oil Spill Disaster Management: State-of-the-Art Sensors Technology for Oil Spill Surveillance’. <em>Sensors for Disaster and Emergency Management Decision Making,</em> vol.&nbsp;8, is. 1, pp.&nbsp;236-255.</li>
+<li>Kranenburg, R.F., Ou, F., Sevo, P., Petruzzella, M., Ridder, R., van Klinken, A., Hakkel, K.D., van Elst, D.M.J., van Veldhoven, R., Pagliano, F., van Asten, A.C., Fiore, A. (2022) ‘On-site illicit-drug detection with an integrated near-infrared spectral sensor: A proof of concept’. <em>Talanta,</em> vol.&nbsp;245.</li>
+<li>Leitloff, J., Hinz, S., Stilla, U. (2004) ‘Vehicle queue detection in satellite images of urban areas’. <em>DigitalGlobe,</em> pp.&nbsp;1-5.</li>
+<li>Mirza, M.U., Xu, C., van Bavel, B., van Nes, E.H., Scheffer, M. (2021) ‘Global inequality remotely sensed’. <em>PNAS Economic Sciences,</em> vol.&nbsp;118, is. 18.</li>
+<li>Moorthy, I., Miller, J.R., Noland, T.L. (2008) ‘Estimating chlorophyll concentration in conifer needles with hyperspectral data: An assessment at the needle and canopy level’. <em>Remote Sensing of Environment,</em> vol.&nbsp;112, is. 6, pp.&nbsp;2824-2838.</li>
+<li>Planer-Friedrich, B., Becker, J., Brimer, B., Merkel, B.J. (2008) ‘Low‐cost aerial photography for high‐resolution mapping of hydrothermal areas in Yellowstone National Park’. <em>International Journal of Remote Sensing,</em> vol.&nbsp;29, is. 6, pp.&nbsp;1781-1794.</li>
+<li>Shortland, A. (2012) ‘Treasure mapped: Using satellite imagery to track the developmental effects of Somali Piracy’. <em>Africa Programme Paper,</em> AFP PP 2012/01</li>
+<li>Specht, M., Specht, C., Szafran, M., Makar, A., Dabrowski, P., Lasota, H., Cywinski, P. (2020) ‘The Use of USV to Develop Navigational and Bathymetric Charts of Yacht Ports on the Example of National Sailing Centre in Gdańsk’. <em>Remote Sensing,</em> vol.&nbsp;12, is. 16.</li>
+<li>Stefański, P., Jach, T., Kozak, J. (2023) ‘Classification of punches in Olympic boxing using static RGB cameras’. <em>Computational Collective Intelligence,</em> pp.&nbsp;540-551</li>
+<li>Toharudin, T., Caraka, R.E., Kaban, P.A., Kim, Y., Kurniawan, R., Supardi, K., Mufti, S.A., Gio, P.U., Sakti, A.D., Chen, R.C., Noh, M., Pardamean, B. (2017) ‘Investigating Adolescent Vulnerability in Indonesia: A Socio-Remote Sensing Big Data Analytics Study Using Night Light Data’. <em>IEEE Access,</em> vol.&nbsp;10</li>
+<li>Varela-Jaramillo, A., Rivas-Torres, G., Guayasamin, J.M., Steinfartz, S., MacLeod, A. (2023) ‘A pilot study to estimate the population size of endangered Galápagos marine iguanas using drones’</li>
+<li>Wojciechowski, P., Wojtowicz, K. (2023) ‘Challenges in designing measurement systems for Formula One cars’. <em>IEEE International Workshop on Metrology for Automotive (MetroAutomotive)</em>, pp.&nbsp;57-61</li>
+<li>Wren, G.G., May, D. (1997) ‘Detection of submerged vessels using remote sensing techniques’. <em>Australian Defence Force Journal,</em> pp.&nbsp;7-15.</li>
+<li>Yue-Ping, N., Lin, Y. (2009) ‘Applications and development of arcaeological remote sensing technology in China’. <em>Journal of Remote Sensing,</em> pp.&nbsp;940-961</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to me</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
