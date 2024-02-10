@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Hannah Schuller">
-<meta name="dcterms.date" content="2024-02-06">
 
-<title>Remotely sensing cities and environments: learning diary</title>
+<title>Remotely sensing cities and environments: learning diary - 5&nbsp; Google Earth Engine</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week1.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./week4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Personal introduction</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -101,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Personal introduction</span></a>
   </div>
 </li>
@@ -131,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week5.html" class="sidebar-item-text sidebar-link">
+  <a href="./week5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></span></a>
   </div>
 </li>
@@ -151,7 +150,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#personal-introduction" id="toc-personal-introduction" class="nav-link active" data-scroll-target="#personal-introduction">Personal introduction</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">5.1</span> Summary</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">5.2</span> Applications</a></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">5.3</span> Reflections</a></li>
   </ul>
 </nav>
     </div>
@@ -160,26 +161,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Remotely sensing cities and environments: learning diary</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Hannah Schuller </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 6, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -187,13 +176,14 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="personal-introduction" class="level1 unnumbered">
-<h1 class="unnumbered">Personal introduction</h1>
-<p>Hello! My name’s Hannah and this is my Quarto learning diary for CASA0023.</p>
-<p>For a bit of background on me; I’m currently enrolled on the Social and Geographic Data Science MSc programme at UCL, but come from a background in Physical Geography after graduating from the University of Edinburgh in 2023. I was first introduced to remote sensing during my undergrad which saw many projects focus on remotely sensing forests and green spaces across Scotland. After a gentle introduction to different sensors, programs and earth-focused applications in the first couple years, I sought more opportunities to combine my primary research interest, the cryosphere, with remote sensing. Fortunately for me the two go increasingly hand-in-hand and as a result my final two years in Edinburgh were focused almost entirely on remote sensing of cold places. My dissertation saw me map ice algal blooms across the Greenland Ice Sheet using Sentinel-3 imagery and this remains my magnum opus (I joke - the maps I made were extremely basic and honestly quite ugly so looking back on it now makes me laugh because I’ve learnt so much in the past year).</p>
-<p>I’ve also worked for two companies as a remote sensing intern/geospatial analyst which taught me a great deal; the first was Space Intelligence in Edinburgh and the other was CF Partners in London. At Space Intelligence I worked on a land cover classification project the company had been awarded by the Tanzanian government looking to monitor deforestation, whilst at CF I was thrown in the deep end with SAR interferometry and Google Earth Engine to produce a forestry-related machine learning model. Before this point, almost all of my interactions with remotely sensed data had been during solo projects for uni, so it was cool to see what working in a team was like during these professional experiences. I found myself learning a <em>lot</em> in a very short amount of time and I was actually quite sad when the time came to leave both companies.</p>
-<p>This jumble of academic and professional experiences has exposed me to quite a range of data products (Sentinel-1,2,3, Landsat, WorldView, MODIS etc.) and applications (ENVI, GEE, Arc+QGIS, SNAP etc.), not to mention the associated headaches and frustrations that come with working in the field. These headaches seem not to have put me off though as I selected this course keen not just to learn more about specific remote sensing techniques, but also to think about their applications in urban contexts. My undergrad was very quantitative and environment-focused which left me often looking down on anything even vaguely ‘human’ or development based. I’d like to challenge that naive perception throughout this course and learn more about how the techniques I’m already familiar with can be used to support cities and the people who live in them.</p>
-<p>I hope you enjoy reading my learning diary!</p>
+<section id="summary" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1</span> Summary</h2>
+</section>
+<section id="applications" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">5.2</span> Applications</h2>
+</section>
+<section id="reflections" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">5.3</span> Reflections</h2>
 
 
 </section>
@@ -434,10 +424,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./week4.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week1.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to remote sensing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

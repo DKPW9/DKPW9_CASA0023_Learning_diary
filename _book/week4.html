@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Remotely sensing cities and environments: learning diary - 4&nbsp; Policy</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./week5.html" rel="next">
+<link href="./week3.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Remotely sensing cities and environments: learning diary</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personal introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to remote sensing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Xaringan</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Corrections</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week4.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">4.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#nairobi-kenya-the-rapidly-urbanising-silicon-savannah" id="toc-nairobi-kenya-the-rapidly-urbanising-silicon-savannah" class="nav-link" data-scroll-target="#nairobi-kenya-the-rapidly-urbanising-silicon-savannah"><span class="header-section-number">4.1.1</span> Nairobi, Kenya; the rapidly urbanising ‘Silicon-Savannah’</a></li>
+  <li><a href="#air-quality-degradation-causes-consequences-and-challenges" id="toc-air-quality-degradation-causes-consequences-and-challenges" class="nav-link" data-scroll-target="#air-quality-degradation-causes-consequences-and-challenges"><span class="header-section-number">4.1.2</span> Air quality degradation: causes, consequences and challenges</a></li>
+  <li><a href="#the-air-quality-action-plan-2019-2023" id="toc-the-air-quality-action-plan-2019-2023" class="nav-link" data-scroll-target="#the-air-quality-action-plan-2019-2023"><span class="header-section-number">4.1.3</span> The Air Quality Action Plan (2019-2023)</a></li>
+  </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">4.2</span> Applications</a>
+  <ul class="collapse">
+  <li><a href="#waste-management-and-illegal-burning-the-problem" id="toc-waste-management-and-illegal-burning-the-problem" class="nav-link" data-scroll-target="#waste-management-and-illegal-burning-the-problem"><span class="header-section-number">4.2.1</span> Waste management and illegal burning: the problem</a></li>
+  <li><a href="#waste-management-and-illegal-burning-the-proposed-solution" id="toc-waste-management-and-illegal-burning-the-proposed-solution" class="nav-link" data-scroll-target="#waste-management-and-illegal-burning-the-proposed-solution"><span class="header-section-number">4.2.2</span> Waste management and illegal burning: the proposed solution</a></li>
+  </ul></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">4.3</span> Reflection</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4.4</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This week we were encouraged to consider how remotely sensed data could be incorporated into metropolitan policies and urban development frameworks. During my research I came across Nairobi’s Air Quality Action Plan (2019-2023) and the controversy surrounding its broadly failed implementation. In several of the plan’s listed objectives I noticed viable and cost-effective opportunities to utilise EO data which have currently gone amiss. Thus, in this diary entry I shall outline an action plan that both describes the current issues at hand and offers a remote sensing data-driven solution to challenges faced by the national government.</p>
+<section id="summary" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.1</span> Summary</h2>
+<section id="nairobi-kenya-the-rapidly-urbanising-silicon-savannah" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="nairobi-kenya-the-rapidly-urbanising-silicon-savannah"><span class="header-section-number">4.1.1</span> Nairobi, Kenya; the rapidly urbanising ‘Silicon-Savannah’</h3>
+<p>Nairobi is the capital and largest city in Kenya, containing a current population of nearly 4.5 million (<a href="https://le.ac.uk/research/stories/sustaining-world/air-quality-nairobi">Hey</a>, 2023).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="nairobi.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Aerial image of Nairobi, Kenya (2016). Source: Landsat-8, NASA</figcaption>
+</figure>
+</div>
+<p>Like many cities in Africa, Nairobi has experienced unprecedented urbanisation in the 21st century which has triggered many positive consequences including a rapidly expanding economy (particularly driven by an explosion in the city’s tech industry earning Nairobi the nickname ‘Silicon-Savannah’), economic advancement and growing global influence (<a href="https://unhabitat.org/sites/default/files/download-manager-files/Kenya%20Nairobi%20Urban%20Profile.pdf">UN Habitat</a>, 2006, <a href="https://www.s-ge.com/en/article/global-opportunities/20213-c6-kenya-tech-hub-fint1?ct">Switzerland Global Enterprise</a>, 2021). Simultaneously however, uncontrolled urbanisation has also triggered a host of new socio-economic and environmental challenges that have posed (among many things) a serious strain on existing infrastructure, a reduction in environmental quality and record-high unemployment (<a href="https://www.brookings.edu/articles/urban-economic-development-in-africa-a-case-study-of-nairobi-city/">Nato <em>et al.,</em></a> 2023).</p>
+<p>Of the negative consequences brought about by urbanisation, air quality in Nairobi has experienced perhaps the greatest hit, representing a serious environmental challenge that is only set to worsen with forecasted population growth.</p>
+</section>
+<section id="air-quality-degradation-causes-consequences-and-challenges" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="air-quality-degradation-causes-consequences-and-challenges"><span class="header-section-number">4.1.2</span> Air quality degradation: causes, consequences and challenges</h3>
+<p>In 2019, air pollution in Nairobi was 4.2 times higher than WHO recommended average annual concentration levels; an achievement which has been consistently reported since 2001 (<a href="https://www.cleanairfund.org/clean-air-africas-cities/nairobi-and-air-pollution/">Clean Air Fund</a>, 2023, <a href="https://assets.publishing.service.gov.uk/media/5eb16f4b86650c4353446282/ASAP_-_East_Africa_-_Air_Quality_Briefing_Note_-_Nairobi.pdf">ASAP Report</a>, 2019). This is result of both formal and informal activities, with the three largest sectoral contributors being road transport, solid waste mismanagement and biomass fuels (see pie chart below for full breakdown).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="piechart.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">PM2.5 Exposure estimates by sectoral source contributors. Source: McDuffie et al.&nbsp;2021 via Clean Air Fund, 2023</figcaption>
+</figure>
+</div>
+<p>Currently, the city only has one active air pollution monitoring site (located near Jomo Kenyatta airport) which limits opportunities to conduct spatio-temporal analyses of air pollution and instead forces a dependence on short term, ad hoc monitoring studies (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3138055/">Kinney <em>et al.,</em></a>2012, <a href="https://www.eci-africa.org/wp-content/uploads/2019/05/Nairobi-Air-Quality-Action-Plan_Final_ECI_31.12.2018.pdf">Nairobi City Council</a>, 2018). Despite a lack of records however, the effects of pollution have not gone unnoticed. Both short and long term respiratory illnesses including pneumonia and lung cancer represent significant public health problems, with three in every ten hospital visits in the capital being attributed to respiratory infections linked to air pollution (<a href="https://news.scienceafrica.co.ke/kenya-air-pollution-related-diseases-burdening-healthcare-in-nairobi/">Briton</a>, 2023).</p>
+<p>The Kenyan national government sought to respond to this by developing strict Air Quality Regulations for the country in 2014. However, high levels of governmental corruption and financial mismanagement saw little implementation of these regulations and instead the document became used for referencing purposes (<a href="https://assets.publishing.service.gov.uk/media/5eb16f4b86650c4353446282/ASAP_-_East_Africa_-_Air_Quality_Briefing_Note_-_Nairobi.pdf">ASAP Report</a>, 2019). It was evident that city councilors alone would struggle to implement action, and that international cooperation was necessary for instigating change. It was in this landscape that the 2019 Air Quality Action Plan was announced; an ambitious collaboration between the Kenyan national government, the UN Environment Agency and the Environmental Compliance Institute.</p>
+</section>
+<section id="the-air-quality-action-plan-2019-2023" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="the-air-quality-action-plan-2019-2023"><span class="header-section-number">4.1.3</span> The Air Quality Action Plan (2019-2023)</h3>
+<p>This plan seeks to support Nairobi City County to develop better air quality management strategies, with the overall objective of building improved capacity to develop, implement and enforce policy and regulatory frameworks for air quality management across the capital (<a href="https://www.eci-africa.org/wp-content/uploads/2019/05/Nairobi-Air-Quality-Action-Plan_Final_ECI_31.12.2018.pdf">Nairobi City Council</a>, 2018). The fixed time period for this plan is 2019-2023, however it was hoped that following the official action ‘end date’ that objectives would remain a top governmental priority. The plan has four main objectives, detailed in the table below.</p>
+<table class="table">
+<caption>Broadly, these aims can be put in 3 overarching categories:</caption>
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Objective</th>
+<th>Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><ol type="1">
+<li>Build scientific evidence for policy/legislative interventions for air quality management</li>
+</ol></td>
+<td>Undertake an inventory of the air pollutants and emission sources that most contribute to poor air quality in Nairobi City</td>
+</tr>
+<tr class="even">
+<td><ol start="2" type="1">
+<li>Raise public awareness on the health/environmental impacts of air pollution</li>
+</ol></td>
+<td>Deploy effective communication on the health and environmental impacts of air pollution, mitigation options and benefits</td>
+</tr>
+<tr class="odd">
+<td><ol start="3" type="1">
+<li>Develop effective approaches for air quality management</li>
+</ol></td>
+<td>Adopt policy, legislative and regulatory options for air management that incorporate mandatory requirements, voluntary and market based approaches</td>
+</tr>
+<tr class="even">
+<td><ol start="4" type="1">
+<li>Build an effective implementation/enforcement programme for air quality legislation</li>
+</ol></td>
+<td>Enhance the capacity of NCCG for implementation and enforcement programme for Nairobi City’s air quality legislation</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Improving current monitoring capacity</p></li>
+<li><p>Education</p></li>
+<li><p>Implementation/enforcement</p></li>
+</ul>
+<p>These objectives are closely linked to several of the UN Sustainable Development Goals, the most relevant of which are presented in the figure below. Specifically, Nairobi’s Action Plan mirrors the aim outlined in Target 3.9 under Goal 3 which focuses on reducing the number of deaths and illnesses from hazardous chemicals and air, water, and soil pollution and contamination.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="SDGs.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Relevant UN Sustainable Development Goals. Source: UN SDGs</figcaption>
+</figure>
+</div>
+<p>Whilst the action plan demonstrated a growing concern towards air quality and an escalated government focus on pollution, the objectives have not been addressed with equal success. The ASAP briefing (led by the UK Government) found approaches to traffic management and reducing emissions by cars to be effective and multifaceted, with implementation plans scheduled for the present decade (<a href="https://assets.publishing.service.gov.uk/media/5eb16f4b86650c4353446282/ASAP_-_East_Africa_-_Air_Quality_Briefing_Note_-_Nairobi.pdf">ASAP Report</a>, 2019). Similarly, outreach and education programs appear to have had a degree of success as indicated in studies such as that by <a href="http://erepository.uonbi.ac.ke/bitstream/handle/11295/99782/Irungu_Actors%20in%20Environmental%20Crime%20in%20City%20Slums%20of%20Kenya;%20the%20Case%20of%20Illegal%20Dumping%20in%20Mathare%20Slum%20of%20Nairobi.pdf?sequence=1&amp;isAllowed=y">Kamau</a>, 2016. By contrast however, less attention was given to reducing pollution caused by poor waste management and the burning of waste (both in residential areas and in the city’s main rubbish dump, Dandora Landfill) remains a pressing problem.</p>
+<p>That the action plan has thus far failed to address this problem of waste management, despite it being a major source of pollutants demonstrates the necessity for new suggested approaches to tackle the problem. Currently, there is no information online about how the city seeks to tackle this problem beyond issuing penalties to those caught in the act of burning, which in itself is a rarely utilised approach (<a href="http://erepository.uonbi.ac.ke/bitstream/handle/11295/99782/Irungu_Actors%20in%20Environmental%20Crime%20in%20City%20Slums%20of%20Kenya;%20the%20Case%20of%20Illegal%20Dumping%20in%20Mathare%20Slum%20of%20Nairobi.pdf?sequence=1&amp;isAllowed=y">Kamau</a>, 2016). In the following section I shall outline a method which relies on freely available EO data to address this; a method which I believe, if implemented, could offer an effective and low-cost solution to the current problem reported across Nairobi.</p>
+</section>
+</section>
+<section id="applications" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">4.2</span> Applications</h2>
+<section id="waste-management-and-illegal-burning-the-problem" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="waste-management-and-illegal-burning-the-problem"><span class="header-section-number">4.2.1</span> Waste management and illegal burning: the problem</h3>
+<p>A serious problem in Nairobi is the illegal dumping and burning of waste. Every day, the city generates 3000 tonnes of solid municipal waste, of which 62% is illegally disposed of (dumped on the side of the road + burnt). This generates an estimated 25% of Nairobi’s PM2.5 concentrations and thus represents a key source of air pollutants. Further information on this problem can be found here: <a href="City residents’ lives at risk over open burning of waste">City residents’ lives at risk over open burning of waste</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="burning.jpg.webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Source: Limo/Tearfund for The Guardian, 2023</figcaption>
+</figure>
+</div>
+<p>Currently, local authorities are charged with the responsibility of collecting and disposing of solid municipal waste within their area of jurisdiction, and are granted powers to issue minimum fines of KSH 500,000 ($3,500) or imprison offenders by up to 6 months. Presently however, rubbish collection is extremely poor, with many areas never being served or only once in several months (<a href="https://www.ajol.info/index.php/jolte/article/view/52009">Muniafu &amp; Otiato</a>, 2010). This is attributed to failings by government authorities above local councilors to monitor and enforce waste management responsibilities; a case which is worsened by severe financial mismanagement (<a href="https://www.sciencedirect.com/science/article/pii/S0956053X05001121?casa_token=aM1TavMlLZQAAAAA:Xl4nvkC0YKnZDFTAIG2ckX9EqtZkk9fxCXuhe4XhorLuqnIR6KdzajiXTnmIVHKq17tDNMdpvQ">Henry <em>et al.,</em></a> 2006). To take matters into their own hands, many individuals in residential areas move waste to the roadside and burn it, producing clouds of toxic noxious fumes (<a href="https://www.ajol.info/index.php/jolte/article/view/52009">Muniafu &amp; Otiato</a>, 2010).</p>
+</section>
+<section id="waste-management-and-illegal-burning-the-proposed-solution" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="waste-management-and-illegal-burning-the-proposed-solution"><span class="header-section-number">4.2.2</span> Waste management and illegal burning: the proposed solution</h3>
+<p>Given the evident legal loopholes and broken accountability system for waste in the city, I suggest that the problem could be best addressed through the creation of an impartial watchdog body who monitor the location of burnt waste through satellite imagery. Instead of penalising individuals who resort to burning waste as a last-ditch scenario when local authorities fail to do their job, this watchdog could report its findings to the national government and identify which local authorities have the worst performance in regards to waste removal.</p>
+<p>The idea for this came from my knowledge of past studies that utilise a Normalised Burn Ratio Index to monitor the severity of (typically) forest fires (EG. <a href="https://www.publish.csiro.au/wf/WF15098">Lu <em>et al.,</em></a>2015 <a href="https://www.sciencedirect.com/science/article/pii/S0254629921004518?casa_token=mqt1F2QT6ZcAAAAA:2bLX0tPWH7dx-IdYEpOs-u5ZQ3vUOU6CRlwkTRTw58Wrkastcon5wOG8rsIC9zq_DfwSuvk0IA">Giddey et al.,</a> 2022, <a href="https://www.mdpi.com/2072-4292/14/7/1727">Alcaras et al.,</a> 2022). These papers used freely available satellite imagery (EG. Sentinel-2) to derive an index for fire severity that allows the location and intensity of fires to be mapped. This served as inspiration for me as it demonstrated the potential for methodologies to monitor fire using remote sensing to be employed even where budgets for accessing expensive high spectral/spatial/temporal imagery do not exist. From this starting point, I began to investigate whether similar methods had been employed in the detection of illegal fires/burning.</p>
+<p>I found <a href="https://link.springer.com/article/10.1007/s40789-020-00375-4">Nádudvari <em>et al.</em>’s</a> 2021 paper to be valuable in considering viable methodologies. They were able to identify the location of self-heating coal waste (a precursor to coal dump fires) in Polish and Ukranian mining regions by creating a self heating intensity index that used band math on selected cloud-free Landsat images. The full details of their methodology are outlined in section 3.1 of the paper: <a href="https://link.springer.com/article/10.1007/s40789-020-00375-4">Classification of fires in coal waste dumps based on Landsat, Aster thermal bands and thermal camera in Polish and Ukrainian mining regions</a> but broadly, the study depended on the thermal infrared sensors of satellite images taken by Landsat and applied ASTER, ‘the cost-effective and time-saving technique for monitoring coal waste fires and detecting their thermal anomalies’.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="polandukraine.png.webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">‘Three representative coal waste dumps as examples of how the SHII index was calculated’. Source: Nádudvari et al., 2021</figcaption>
+</figure>
+</div>
+<p>Although the limitations of their method are described in the paper (namely, they tried to use a combination of images obtained by different Landsat satellites which led to issues when comparing images against one another), they found Landsat 7 ETM+ to be the most effective sensor for their purposes. This is valuable insight in regards to opportunities for remote sensing in Nairobi as attempts to monitor fires could start by applying a similar methodology on imagery obtained by just this sensor. However, most waste burning occurs at night time in Nairobi to avoid detection (<a href="https://www.cleanairfund.org/clean-air-africas-cities/nairobi-and-air-pollution/">Clean Air Fund</a>, 2023), and given that night-time Landsat images are rare (<a href="https://link.springer.com/article/10.1007/s40789-020-00375-4">Nádudvari <em>et al.</em></a><em>,</em> 2021), this method may require supplementation by images that are obtained at night - in their case, they did this by using capturing images using a drone at night.</p>
+<p>A more sophisticated methodology for detecting waste burning (as well as illegal dumping more generally) was outlined in a proof-of-concept article by The California Integrated Waste Management Board (<a href="https://calrecycle.ca.gov/%20Tires/Fires/">CIWMB</a>, 2005). They were able to identify the location of illegal waste tire piles by using high spatial resolution satellite imagery (Multispectral Ikonos) across 4 small areas with a combined area of &gt;50km2 in California. Their method involved the use of visual analysis and an automated Tire Identification from Reflectance (TIRe) model to find possible waste tire piles - the model was a univariate decision tree which used the spectral characteristics of tires to segment possible tire features from the remaining image. The model was successful, proving capable of identifying 15 tire piles (2 of which were previously unknown to the CIWMB) and returning only one false positive. Unlike the research by <a href="https://link.springer.com/article/10.1007/s40789-020-00375-4">Nádudvari</a>, the <a href="https://calrecycle.ca.gov/%20Tires/Fires/">CIWMB</a> paper demonstrated the opportunity to identify much smaller objects from satellite data. However, whilst Landsat data is freely available, Ikonos sits behind a pay wall, which may affect the feasibility of its use in the case of Nairobi where government budgets are stretched and misused. Nonetheless, <a href="https://calrecycle.ca.gov/%20Tires/Fires/">CIWMD</a>’s findings demonstrate a proven, alternative approach to identifying waste + burning using remote sensing data which could be adapted for use by the Nairobi government.</p>
+<p>A final approach which has been outlined in past literature was developed by <a href="https://pubs.acs.org/doi/epdf/10.1021/acs.estlett.3c00225">Scott <em>et al.,</em></a>2023, who identified instances of illegal waste burning in the Maldieves through the development of a machine learning approach. Specifically, they used an ‘image classification and semantic segmentation model based on a pretrained convolutional neural network to identify and locate plumes within images’. They fed three-band (RGB), 3m/pixel images from Planet satellites into their model and found their classification model to achieve a training accuracy of 96% and a validation accuracy of 83%. Scott’s research indicates ever-expanding opportunities to utilise new technologies to detect fires more accurately than ever before.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="model.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Successful model outputs versus visually identified plumes. Source: Scott et al.&nbsp;2023</figcaption>
+</figure>
+</div>
+<p>Of the three methods outlined in this section, <a href="https://pubs.acs.org/doi/epdf/10.1021/acs.estlett.3c00225">Scott <em>et al.</em></a><em>,</em>’s 2023 represents the most complex. Unlike <a href="https://link.springer.com/article/10.1007/s40789-020-00375-4">Nádudvari <em>et al.</em>’s</a> 2021 paper, opportunities to reproduce <a href="https://pubs.acs.org/doi/epdf/10.1021/acs.estlett.3c00225">Scott <em>et al.</em></a><em>,</em>’s work is potentially more limited as it would require a greater technological capacity and people knowledgeable in the use of machine learning - several parts of the methodology went over my head! That isn’t to say it cannot be used - if funding was available and specialists were employed, this method would be an incredibly valuable way of monitoring burnt waste across Nairobi. However, as mentioned previously, it is unclear as to whether this is feasible given financial constraints. Therefore, in an ideal world it would be great to see a methodology like that used by <a href="https://pubs.acs.org/doi/epdf/10.1021/acs.estlett.3c00225">Scott <em>et al.</em></a><em>,</em> 2023 to identifying poor waste management in local authorities across Nairobi, but it may be that an approach like that used by <a href="https://link.springer.com/article/10.1007/s40789-020-00375-4">Nádudvari <em>et al.</em></a>, 2021 or <a href="https://calrecycle.ca.gov/%20Tires/Fires/">CIWMB</a>, 2005 is more suitable.</p>
+<p>It is important to note that these papers represent just three ways of identifying waste mismanagement contributing to air pollution from satellite imagery - other methodologies are outlined elsewhere! Instead of outlining a singular method, I hope this section has effectively communicated the fact that there is a wide range of ways of monitoring this pollution-contributor; each with a range of pros and cons.</p>
+</section>
+</section>
+<section id="reflection" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">4.3</span> Reflection</h2>
+<p>Before settling on Nairobi’s Air Quality Action Plan I did quite a lot of preliminary research into different metropolitan development plans and had no idea quite how many there were. Coming from a strictly quantitative physical geography background I had never really researched urban development before and found it particularly surprising to see how many frameworks overlapped with one another on spatial and temporal scales. If I’m being honest, this made me feel quite disillusioned with the idea that many of them are actually effective; I’m sure this is quite a generic realisation, but one which took me this long to come to. Another thing that I noticed was how wildly varied the quality of plans could be - comparing Nairobi’s lackluster Air Quality plan to something detailed and solution-focused like the Ahmedabad Heat-Health Action Plan (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4024996/">Knowlton <em>et al.,</em></a>2014) was valuable in demonstrating what makes a framework useful in practice rather than just serving as a reference document. It was probably from this realisation that I became so invested in the week’s task; I really enjoyed the creativity that had to go into imagining usable and actionable solutions to recognised problems. It was particularly satisfying to come up with ideas that involved the use of EO data, only to find that similar research had been conducted elsewhere that found the methods to be viable and effective. I really experienced this when I came across <a href="https://pubs.acs.org/doi/epdf/10.1021/acs.estlett.3c00225">Scott <em>et al.</em></a><em>,</em>’s 2023 paper in the Maldives as this was the idea I had been skirting around when reading other papers.</p>
+<p>Beyond my personal reflections, I also want to add some reflections on the case of Nairobi itself. Although I do think that my proposed solutions could be theoretically used to accomplish some of the objectives outlined the city’s Action Plan, I’m also conscious of the fact that they’re incredibly ambitious and probably unrealistic. This is not due to limitiations in methodologies or data availability; rather, in virtually all of the literature I read I was constantly reminded of the corruption and financial mismanagement that plagues not only Nairobi but <em>all</em> levels of Kenya’s systems of governance. Therefore whilst it is totally feasible that a watchdog is set up and EO data is used for monitoring, I’m not sure that the resulting findings would do much to crack down on those responsible for air pollution. Instead, I fear that it would serve as another financial drain. Hopefully this is just my pessimism talking, as I would love to see novel uses of EO data outlined in scientific papers be used in practice to enact change.</p>
+</section>
+<section id="references" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="references"><span class="header-section-number">4.4</span> References</h2>
+<ol type="1">
+<li>Alcaras, E., Costantino, D., Guastaferro, F., Parente, C., Pepe, M. (2022) ‘Normalised burn ratio plus (NBR+): A new index for Sentinel-2 imagery’. <em>Remote Sensing,</em> vol.&nbsp;14, is. 7.</li>
+<li>ASAP Report (2019) ‘Air quality briefing note: Nairobi (Kenya)’. Available at: https://assets.publishing.service.gov.uk/media/5eb16f4b86650c4353446282/ASAP_-_East_Africa_-_Air_Quality_Briefing_Note_-_Nairobi.pdf</li>
+<li>Briton, G. (2023) ‘Kenya: Air pollution-related diseases burdening healthcare in Nairobi’. Web article, available at: https://news.scienceafrica.co.ke/kenya-air-pollution-related-diseases-burdening-healthcare-in-nairobi/</li>
+<li>California Integrated Waste Management Board (CIWMB) (2005) ‘Waste Tire Hauling and Disposal’. Available at:http://www.calrecycle.ca.gov/ Tires/Fires/</li>
+<li>Clean Air Fund (2023) ‘Nairobi and air pollution’. Web article, available at: https://www.cleanairfund.org/clean-air-africas-cities/nairobi-and-air-pollution/</li>
+<li>Giddey, B.J., Baard, J.A., Kraaij, T. (2022) ‘Verification of the differened Normalised Burn Ratio (dNBR) as an index of fire severity in Afrotemperate Forest’. <em>South African Journal of Botany,</em> vol.&nbsp;146, pp.&nbsp;348-353.</li>
+<li>Henry, R.K., Yongsheng, Z., Jun, D. (2006) ‘Municipal solid waste management challenges in developing countries - Kenyan case study’. <em>Waste Management,</em> vol.&nbsp;26, is. 1, pp.&nbsp;92-100.</li>
+<li>Hey, J.V. (2023) ‘Improving air quality in Nairobi’. Web article, available at: https://le.ac.uk/research/stories/sustaining-world/air-quality-nairobi</li>
+<li>Kamau, I.S. (2016) ‘Actors in environmental crime in city slums of Kenya; the case of illegal dumping in Mathare slum of Nairobi’. <em>University of Nairobi Press.</em></li>
+<li>Kinney, P.L., Gichuru, M.G., Volavka-Close, N., Ngo, N., Ndiba, P.K., Law, A., Gachanja, A., Gaita, S.M., Chillrud, S.N., Sclar, E. (2012) ‘Traffic impacts on PM2.5 air quality in Nairobi, Kenya’. <em>Environment, Science, Policy,</em> vol.&nbsp;14, is. 4, pp.&nbsp;369-378.</li>
+<li>Knowlton, K., Kulkarni, S.P., Azhar, G.S., Mavalankar, D., Jaiswal, A., Connolly, M., Nori-Sarma, A., Rajiva, A., Dutta, P., Deol, B., Sanchez, L., Khosla, R., Webster, P.J., Toma, V.E., Sheffield, P., Hess, J.J. (2014) ‘Development and implementation of South Asia’s first heat-health action plan in Ahmedabad (Gujarat, India)’. <em>International Journal of Environmental Research and Public Health,</em> vol.&nbsp;11, is. 4, pp.&nbsp;3473-3492.</li>
+<li>Lu, B., He, Y., Tong, A. (2015) ‘Evaluation of spectral indices for estimating burn severity in semiarid grasslands’. <em>International Journal of Wildland Fire,</em> vol.&nbsp;25, is. 2, pp.&nbsp;147-157</li>
+<li>Muniafu, M., Otiato, E. (2010) ‘Solid waste management in Nairobi, Kenya. A case for emerging economies’. <em>The Journal of Language, Technology &amp; Entrepreneurship in Africa,</em> vol.&nbsp;2, no. 1, pp.&nbsp;342-350</li>
+<li>Nádudvari, Á, Abramowicz, A., Fabiańska, M., Misz-Kennan, M., Ciesielczuk, J. (2021) ‘Classification of fires in coal waste dumps based on Landsat, ASTER thermal bands and thermal cameras in Polish and Ukranian mining regions’. <em>International Journal of Coal Science and Technology,</em> vol.&nbsp;8, pp.&nbsp;441-456.</li>
+<li>Nairobi City Council (2018) ‘Air quality action plan’. Available at: https://www.eci-africa.org/wp-content/uploads/2019/05/Nairobi-Air-Quality-Action-Plan_Final_ECI_31.12.2018.pdf</li>
+<li>NASA (2016) ‘Nairobi swells with urban growth’. Web article, available at: https://earthobservatory.nasa.gov/images/88822/nairobi-swells-with-urban-growth</li>
+<li>Nato, J., Njogu, H., Ngugi, R., Ordu, A.U., Ijjasz-Vasquez, E. (2023) ‘Urban economic development in Africa: A case study of Nairobi city’. Web article, available at: https://www.brookings.edu/articles/urban-economic-development-in-africa-a-case-study-of-nairobi-city/</li>
+<li>Scott, S.R., Hailemariam, P.E., Bhave, P.V., Bergin, M.H., Carlson, D.E. (2023) ‘Identifying waste burning plumes using high-resolution satellite imagery and machine learning: a case study in the Maldieves’. <em>Environment, Science and Technology Letters,</em> vol.&nbsp;10, is. 8, pp.&nbsp;642-648.</li>
+<li>Switzerland Global Enterprise (2021) ‘Global opportunities: Silicon Savannah - Tapping into the potential of Africa’s tech hub’. Web article, available at: https://www.s-ge.com/en/article/global-opportunities/20213-c6-kenya-tech-hub-fint1?ct</li>
+<li>The Guardian (2023) ‘The waste pickers of Nairobi’s Dandora dump site - in pictures’. Web article, available at: https://www.theguardian.com/environment/gallery/2023/nov/17/waste-pickers-nairobi-dandora-dump-site-in-pictures</li>
+<li>UN Habitat (2006) ‘Nairobi Urban Sector Profile’. Available at: https://unhabitat.org/sites/default/files/download-manager-files/Kenya%20Nairobi%20Urban%20Profile.pdf</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./week3.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Corrections</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./week5.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
