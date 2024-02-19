@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "week5.html#summary",
+    "href": "week5.html#summary",
+    "title": "5  Google Earth Engine",
+    "section": "5.1 Summary",
+    "text": "5.1 Summary"
+  },
+  {
+    "objectID": "week5.html#applications",
+    "href": "week5.html#applications",
+    "title": "5  Google Earth Engine",
+    "section": "5.2 Applications",
+    "text": "5.2 Applications"
+  },
+  {
+    "objectID": "week5.html#reflections",
+    "href": "week5.html#reflections",
+    "title": "5  Google Earth Engine",
+    "section": "5.3 Reflections",
+    "text": "5.3 Reflections"
+  },
+  {
+    "objectID": "week2.html",
+    "href": "week2.html",
+    "title": "2  Xaringan",
+    "section": "",
+    "text": "This week we were tasked with familiarising ourselves with Xaringan and Quarto, neither of which I have ever come across before. For my presentation, I decided to return to my cryospheric roots by researching ICESat-2, a lidar satellite I’ve briefly used during my undergraduate degree and have seen mentioned in many a paper. A summary of the sensor, a brief foray into its published applications and a reflection on its contributions are outlined in the Xaringan presentation embedded below."
+  }
+]

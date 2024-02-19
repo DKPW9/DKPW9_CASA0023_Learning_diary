@@ -4,4 +4,54 @@
 
 ## Applications
 
+Upon reading the Week 5 practical content, I found myself distracted by the link to the GEE catalog - I had no idea that such a range of data was available! In particular, the [MODIS Thermal Anomalies & Global Daily Fire](https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD14A1) (1km) dataset (below) stood out to me as this links quite well with the policy recommendation I made last week (see Week 4 tab).
+
+![Screenshot from the GEE catalog](MODIS.png)
+
+This dataset provides daily fire mask composites at a 1km resolution. The product allows users to distinguish between fire, no fire and no observation with ease and has a range of potential applications including:
+
+-   Spatio-temporal fire monitoring across ecosystems
+
+-   Detecting changes in fire distribution
+
+-   Identification of new wildfires
+
+-   Observation of fire frequency/relative strength
+
+Keen to combine the taught practical skills with my policy suggestion from Week 4, I decided to test whether the product might be a suitable choice for detecting fires in Nairobi that are responsible for lowering air quality. I downloaded a shapefile of Kenya's administrative boundaries from [GADM](https://gadm.org), filtered the shapefile to obtain Nairobi's outline (using QGIS to identify the boundary code) and uploaded this as an asset to GEE.
+
+![The Kenya boundary uploaded to my GEE assets (peep some of my past projects!)](assets.png)
+
+After this, I built upon the sample code provided to me in the GEE developers guide for the MODIS product, filtered my study area to Nairobi county boundaries and created a fire mask using the FireMask band.
+
+![](code.png)
+
+However, it was only at this point after running the code and trialing different dates to call for MODIS data that I realised I'd made a fundamental mistake;
+
+![](nairobi_fire.png)
+
+No matter which dates I selected, I couldn't seem to detect fire across my study area, despite understanding that rubbish was burnt across the city almost constantly. It was only after I returned to the product specs that I realised why this was the case. The MODIS Terra product has a resolution of 1km, which is too large to detect local fires which occur on a much smaller scale. It is unlikely that even if a pixel has several fires within it, these fires will comprise the majority of the pixel and therefore GEE is unable to mask the surface properties accordingly. This was definitely a good reminder for me that even if you've got experience in remote sensing, image properties continue to catch you out at times!
+
+With the knowledge in mind that this product was more suited towards observation of large scale fires (typically wildfires/forestry related) than local incinerations, I sought out papers which had used the MODIS Terra data in the past to get a better sense of what it has/can be used for.
+
+[Habibie *et al.,*](https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK)2021 stood out to me, describing a methodology which heralds GEE's cloud computing capabilities in the use of MODIS14A1 composites to detect fires in real time across Indonesia's forests. They describe how efficient techniques are essential in the identification of current fires given the ability for fires to change rapidly across space and time. In their research, the authors describe how GEE is specifically suited for this job; successfully identifying fire hotspots with 'an appreciable prediction accuracy... quick and fast'. This conclusion is evident given the working pipeline they suggest for their methodology (below), which in just 5 steps allows fires to be identified.
+
+![[Habibie *et al.,*](https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK). 2021 methodology pipeline](methodology.gif)
+
+Research by [da Rocha Miranda *et al.,*](https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g)2023 utilises a similar approach but more complex methodology to monitor and validate active fires using the MODIS product in GEE. Unlike [Habibie *et al.,*](https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK)this team combined several different products to model the surface of their study area (Brazil), and diagnose active fires by cross-examining data from different satellites (MODIS Sensor, MOD14A1 product active fire, and MCD64A1 product burn area images). Validation was then conducted using a range of equations (below).
+
+![Equations underpinning the validation process used by [da Rocha Miranda *et al.,*](https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g)2023](equations1.png)
+
+Whilst [Habibie *et al.,*](https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK)2021's research was focused more on exploring the potential use of GEE in forest fire observation tasks, [da Rocha Miranda *et al.,*](https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g)2023 sought to integrate their methodology/findings into the current approach used by members of the Brazilian Institute of Environment and Renewable [Natural Resources](#0 "Learn more about Natural Resources from ScienceDirect's AI-generated Topic Pages") who are responsible for monitoring and protecting the forest. What this demonstrates is that whilst GEE can be used to successfully detect fires through just a few lines of code, it can also support more complex monitoring/approaches. Thus, GEE's true value lies in its simultaneously simple interface and robust applications/capabilities.
+
 ## Reflections
+
+I must admit, I feel slightly silly for not having realised before writing the code in GEE that the MODIS Terra product might not be suitable for my application. That being said, my mistakes took me back to week 1's warnings that you need to always consider the specifications of a product when using it, and that a data product's suitability is determined not simply by its application but also according to its spatial/spectral/temporal/radiometric qualities. No matter how much confidence or experience in remote sensing you might have, these mistakes can happen easily!
+
+Despite this set-back, I was encouraged by the readings I described above that outline how the product has incredibly valuable real-life applications and in particular, I found it really interesting to read about how the research by [da Rocha Miranda *et al.,*](https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g)2023 informed improvements in the Brazilian Institute's approach to monitoring deadly forest fires. The capabilities of GEE are evident, both in the amount of data that can be accessed via it and the broad range of uses it has (from simple to much more complex processing). I fully believe that GEE and cloud computing more broadly is set to change research that uses remote sensing enormously, and perhaps most excitingly, expand the opportunities for non-specialists to quickly and easily engage with data and harness it for good. Returning to the case of Nairobi, I definitely believe GEE could represent a highly valuable tool in facilitating the use of remote sensing data for environmental monitoring at a low cost to suit the available budgets allocated by the government to enact policy such as the Air Quality Action Plan.
+
+## References
+
+1.  Google Earth Engine Data Catalog (2024) 'MOD14A1.061: Terra Thermal Anomalies & Fire Daily Global 1km'. Web page, available at: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD14A1
+2.  Habibie, M.I., Nurda, N., Akbar, H.I., Bintoro, O.B., Arifandri, R., Ramadhana, N. (2021) 'Real time monitoring fire detection using remote sensing'. *IEEE Asia-Pacific Conference on Geoscience, Electronics and Remote Sensing Technology,* vol. 2, pp. 28-32
+3.  da Rocha Miranda, J., Juvanhol, R.S., da Silva, R.G. (2023) 'Use of maximum entropy to improve validation and prediction of active fires in a Brazilian savanna region'. *Ecological Modelling,* vol. 475.
