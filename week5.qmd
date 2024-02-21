@@ -2,6 +2,21 @@
 
 ## Summary
 
+This week we were formally introduced to Google Earth Engine (hereafter GEE), with the taught content being split into two parts:
+
+1.  The set up of GEE
+2.  How GEE is used
+
+As I have experience using GEE at work, I won't cover the basics too thoroughly. The main takeaway is that GEE supports geospatial analysis at a range of scales; at great speed, across the world, and through an enormous range of data sets and types.
+
+Importantly, unlike other programmes that we have been taught, GEE uses Javascript (whilst a Python API exists in GEE it's a bit janky and Java is just easier to use). As a result, the coding syntax is ever so slightly different (EG. Variables are defined with 'var'), but really nothing too challenging or complex.
+
+Another thing that's unique but really advantageous about GEE is the fact that projections are sorted for you, with all data being automatically converted to the Mercator projection when displayed on screen. When loading data into other platforms (I'm looking at you, QGIS), dealing with projections can be sometimes the greatest headache, so I really like that in GEE it's all standardised ahead of any analysis you conduct.
+
+Just as in any other geospatial data programme, the options for analysis are never ending. You can perform a range of operations (joins, filtering etc.), and methods (machine + deep learning, classifications, etc.). Basically, there is no limit to what you can do in GEE and it performs just as well, if not better in my opinion, than other applications.
+
+Simply put, GEE is great and I will never fail to be shocked at how easy it makes some otherwise really arduous tasks, purely through its seamless design and focus on data analysis rather than processing.
+
 ## Applications
 
 Upon reading the Week 5 practical content, I found myself distracted by the link to the GEE catalog - I had no idea that such a range of data was available! In particular, the [MODIS Thermal Anomalies & Global Daily Fire](https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD14A1) (1km) dataset (below) stood out to me as this links quite well with the policy recommendation I made last week (see Week 4 tab).
