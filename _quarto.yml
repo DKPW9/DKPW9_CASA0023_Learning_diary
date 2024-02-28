@@ -15,11 +15,9 @@ book:
     - week5.qmd
     - week6.qmd
 
-format:
-  html:
-    theme: united
-  pdf:
-    documentclass: scrreprt
+format: html
+theme: united
+documentclass: scrreprt
 
 editor: visual
 
