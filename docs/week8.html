@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Remotely Sensing Cities and Environments: Learning Diary - 5&nbsp; Google Earth Engine</title>
+<title>Remotely Sensing Cities and Environments: Learning Diary - 8&nbsp; SAR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week6.html" rel="next">
-<link href="./week4.html" rel="prev">
+<link href="./week7.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week8.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">SAR</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -130,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week5.html" class="sidebar-item-text sidebar-link active">
+  <a href="./week5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></span></a>
   </div>
 </li>
@@ -148,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week8.html" class="sidebar-item-text sidebar-link">
+  <a href="./week8.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">SAR</span></span></a>
   </div>
 </li>
@@ -162,10 +161,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">5.1</span> Summary</a></li>
-  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">5.2</span> Applications</a></li>
-  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">5.3</span> Reflections</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.4</span> References</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">8.1</span> Summary</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">8.2</span> Applications</a></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">8.3</span> Reflections</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8.4</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -174,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">SAR</span></h1>
 </div>
 
 
@@ -189,76 +188,17 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="summary" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1</span> Summary</h2>
-<p>This week we were formally introduced to Google Earth Engine (hereafter GEE), with the taught content being split into two parts:</p>
-<ol type="1">
-<li>The set up of GEE</li>
-<li>How GEE is used</li>
-</ol>
-<p>As I have experience using GEE at work, I won’t cover the basics too thoroughly. The main takeaway is that GEE supports geospatial analysis at a range of scales; at great speed, across the world, and through an enormous range of data sets and types.</p>
-<p>Importantly, unlike other programmes that we have been taught, GEE uses Javascript (whilst a Python API exists in GEE it’s a bit janky and Java is just easier to use). As a result, the coding syntax is ever so slightly different (EG. Variables are defined with ‘var’), but really nothing too challenging or complex.</p>
-<p>Another thing that’s unique but really advantageous about GEE is the fact that projections are sorted for you, with all data being automatically converted to the Mercator projection when displayed on screen. When loading data into other platforms (I’m looking at you, QGIS), dealing with projections can be sometimes the greatest headache, so I really like that in GEE it’s all standardised ahead of any analysis you conduct.</p>
-<p>Just as in any other geospatial data programme, the options for analysis are never ending. You can perform a range of operations (joins, filtering etc.), and methods (machine + deep learning, classifications, etc.). Basically, there is no limit to what you can do in GEE and it performs just as well, if not better in my opinion, than other applications.</p>
-<p>Simply put, GEE is great and I will never fail to be shocked at how easy it makes some otherwise really arduous tasks, purely through its seamless design and focus on data analysis rather than processing.</p>
+<section id="summary" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.1</span> Summary</h2>
 </section>
-<section id="applications" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">5.2</span> Applications</h2>
-<p>Upon reading the Week 5 practical content, I found myself distracted by the link to the GEE catalog - I had no idea that such a range of data was available! In particular, the <a href="https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD14A1">MODIS Thermal Anomalies &amp; Global Daily Fire</a> (1km) dataset (below) stood out to me as this links quite well with the policy recommendation I made last week (see Week 4 tab).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="MODIS.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Screenshot from the GEE catalog</figcaption>
-</figure>
-</div>
-<p>This dataset provides daily fire mask composites at a 1km resolution. The product allows users to distinguish between fire, no fire and no observation with ease and has a range of potential applications including:</p>
-<ul>
-<li><p>Spatio-temporal fire monitoring across ecosystems</p></li>
-<li><p>Detecting changes in fire distribution</p></li>
-<li><p>Identification of new wildfires</p></li>
-<li><p>Observation of fire frequency/relative strength</p></li>
-</ul>
-<p>Keen to combine the taught practical skills with my policy suggestion from Week 4, I decided to test whether the product might be a suitable choice for detecting fires in Nairobi that are responsible for lowering air quality. I downloaded a shapefile of Kenya’s administrative boundaries from <a href="https://gadm.org">GADM</a>, filtered the shapefile to obtain Nairobi’s outline (using QGIS to identify the boundary code) and uploaded this as an asset to GEE.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The Kenya boundary uploaded to my GEE assets (peep some of my past projects!)</figcaption>
-</figure>
-</div>
-<p>After this, I built upon the sample code provided to me in the GEE developers guide for the MODIS product, filtered my study area to Nairobi county boundaries and created a fire mask using the FireMask band.</p>
-<p><img src="code.png" class="img-fluid"></p>
-<p>However, it was only at this point after running the code and trialing different dates to call for MODIS data that I realised I’d made a fundamental mistake;</p>
-<p><img src="nairobi_fire.png" class="img-fluid"></p>
-<p>No matter which dates I selected, I couldn’t seem to detect fire across my study area, despite understanding that rubbish was burnt across the city almost constantly. It was only after I returned to the product specs that I realised why this was the case. The MODIS Terra product has a resolution of 1km, which is too large to detect local fires which occur on a much smaller scale. It is unlikely that even if a pixel has several fires within it, these fires will comprise the majority of the pixel and therefore GEE is unable to mask the surface properties accordingly. This was definitely a good reminder for me that even if you’ve got experience in remote sensing, image properties continue to catch you out at times!</p>
-<p>With the knowledge in mind that this product was more suited towards observation of large scale fires (typically wildfires/forestry related) than local incinerations, I sought out papers which had used the MODIS Terra data in the past to get a better sense of what it has/can be used for.</p>
-<p><a href="https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK">Habibie <em>et al.,</em></a>2021 stood out to me, describing a methodology which heralds GEE’s cloud computing capabilities in the use of MODIS14A1 composites to detect fires in real time across Indonesia’s forests. They describe how efficient techniques are essential in the identification of current fires given the ability for fires to change rapidly across space and time. In their research, the authors describe how GEE is specifically suited for this job; successfully identifying fire hotspots with ‘an appreciable prediction accuracy… quick and fast’. This conclusion is evident given the working pipeline they suggest for their methodology (below), which in just 5 steps allows fires to be identified.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="methodology.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption"><a href="https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK">Habibie <em>et al.,</em></a>. 2021 methodology pipeline</figcaption>
-</figure>
-</div>
-<p>Research by <a href="https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g">da Rocha Miranda <em>et al.,</em></a>2023 utilises a similar approach but more complex methodology to monitor and validate active fires using the MODIS product in GEE. Unlike <a href="https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK">Habibie <em>et al.,</em></a>this team combined several different products to model the surface of their study area (Brazil), and diagnose active fires by cross-examining data from different satellites (MODIS Sensor, MOD14A1 product active fire, and MCD64A1 product burn area images). Validation was then conducted using a range of equations (below).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="equations1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Equations underpinning the validation process used by <a href="https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g">da Rocha Miranda <em>et al.,</em></a>2023</figcaption>
-</figure>
-</div>
-<p>Whilst <a href="https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK">Habibie <em>et al.,</em></a>2021’s research was focused more on exploring the potential use of GEE in forest fire observation tasks, <a href="https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g">da Rocha Miranda <em>et al.,</em></a>2023 sought to integrate their methodology/findings into the current approach used by members of the Brazilian Institute of Environment and Renewable <a href="#0" title="Learn more about Natural Resources from ScienceDirect's AI-generated Topic Pages">Natural Resources</a> who are responsible for monitoring and protecting the forest. What this demonstrates is that whilst GEE can be used to successfully detect fires through just a few lines of code, it can also support more complex monitoring/approaches. Thus, GEE’s true value lies in its simultaneously simple interface and robust applications/capabilities.</p>
+<section id="applications" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">8.2</span> Applications</h2>
 </section>
-<section id="reflections" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">5.3</span> Reflections</h2>
-<p>I must admit, I feel slightly silly for not having realised before writing the code in GEE that the MODIS Terra product might not be suitable for my application. That being said, my mistakes took me back to week 1’s warnings that you need to always consider the specifications of a product when using it, and that a data product’s suitability is determined not simply by its application but also according to its spatial/spectral/temporal/radiometric qualities. No matter how much confidence or experience in remote sensing you might have, these mistakes can happen easily!</p>
-<p>Despite this set-back, I was encouraged by the readings I described above that outline how the product has incredibly valuable real-life applications and in particular, I found it really interesting to read about how the research by <a href="https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g">da Rocha Miranda <em>et al.,</em></a>2023 informed improvements in the Brazilian Institute’s approach to monitoring deadly forest fires. The capabilities of GEE are evident, both in the amount of data that can be accessed via it and the broad range of uses it has (from simple to much more complex processing). I fully believe that GEE and cloud computing more broadly is set to change research that uses remote sensing enormously, and perhaps most excitingly, expand the opportunities for non-specialists to quickly and easily engage with data and harness it for good. Returning to the case of Nairobi, I definitely believe GEE could represent a highly valuable tool in facilitating the use of remote sensing data for environmental monitoring at a low cost to suit the available budgets allocated by the government to enact policy such as the Air Quality Action Plan.</p>
+<section id="reflections" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">8.3</span> Reflections</h2>
 </section>
-<section id="references" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="references"><span class="header-section-number">5.4</span> References</h2>
-<ol type="1">
-<li>Google Earth Engine Data Catalog (2024) ‘MOD14A1.061: Terra Thermal Anomalies &amp; Fire Daily Global 1km’. Web page, available at: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD14A1</li>
-<li>Habibie, M.I., Nurda, N., Akbar, H.I., Bintoro, O.B., Arifandri, R., Ramadhana, N. (2021) ‘Real time monitoring fire detection using remote sensing’. <em>IEEE Asia-Pacific Conference on Geoscience, Electronics and Remote Sensing Technology,</em> vol.&nbsp;2, pp.&nbsp;28-32</li>
-<li>da Rocha Miranda, J., Juvanhol, R.S., da Silva, R.G. (2023) ‘Use of maximum entropy to improve validation and prediction of active fires in a Brazilian savanna region’. <em>Ecological Modelling,</em> vol.&nbsp;475.</li>
-</ol>
+<section id="references" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="references"><span class="header-section-number">8.4</span> References</h2>
 
 
 </section>
@@ -499,14 +439,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week4.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy</span></span>
+      <a href="./week7.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification (ii)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week6.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Classification (i)</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

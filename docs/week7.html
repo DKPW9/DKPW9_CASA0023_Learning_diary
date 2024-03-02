@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Remotely Sensing Cities and Environments: Learning Diary - 5&nbsp; Google Earth Engine</title>
+<title>Remotely Sensing Cities and Environments: Learning Diary - 7&nbsp; Classification (ii)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week6.html" rel="next">
-<link href="./week4.html" rel="prev">
+<link href="./week8.html" rel="next">
+<link href="./week6.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification (ii)</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week5.html" class="sidebar-item-text sidebar-link active">
+  <a href="./week5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></span></a>
   </div>
 </li>
@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week7.html" class="sidebar-item-text sidebar-link">
+  <a href="./week7.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification (ii)</span></span></a>
   </div>
 </li>
@@ -162,10 +162,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">5.1</span> Summary</a></li>
-  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">5.2</span> Applications</a></li>
-  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">5.3</span> Reflections</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.4</span> References</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">7.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#object-based-image-analysis-obia" id="toc-object-based-image-analysis-obia" class="nav-link" data-scroll-target="#object-based-image-analysis-obia"><span class="header-section-number">7.1.1</span> Object based image analysis (OBIA)</a></li>
+  <li><a href="#sub-pixel-analysis" id="toc-sub-pixel-analysis" class="nav-link" data-scroll-target="#sub-pixel-analysis"><span class="header-section-number">7.1.2</span> Sub-pixel analysis</a></li>
+  <li><a href="#accuracy" id="toc-accuracy" class="nav-link" data-scroll-target="#accuracy"><span class="header-section-number">7.1.3</span> Accuracy</a></li>
+  </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">7.2</span> Applications</a></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">7.3</span> Reflections</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7.4</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -174,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification (ii)</span></h1>
 </div>
 
 
@@ -189,75 +194,66 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="summary" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1</span> Summary</h2>
-<p>This week we were formally introduced to Google Earth Engine (hereafter GEE), with the taught content being split into two parts:</p>
-<ol type="1">
-<li>The set up of GEE</li>
-<li>How GEE is used</li>
-</ol>
-<p>As I have experience using GEE at work, I won’t cover the basics too thoroughly. The main takeaway is that GEE supports geospatial analysis at a range of scales; at great speed, across the world, and through an enormous range of data sets and types.</p>
-<p>Importantly, unlike other programmes that we have been taught, GEE uses Javascript (whilst a Python API exists in GEE it’s a bit janky and Java is just easier to use). As a result, the coding syntax is ever so slightly different (EG. Variables are defined with ‘var’), but really nothing too challenging or complex.</p>
-<p>Another thing that’s unique but really advantageous about GEE is the fact that projections are sorted for you, with all data being automatically converted to the Mercator projection when displayed on screen. When loading data into other platforms (I’m looking at you, QGIS), dealing with projections can be sometimes the greatest headache, so I really like that in GEE it’s all standardised ahead of any analysis you conduct.</p>
-<p>Just as in any other geospatial data programme, the options for analysis are never ending. You can perform a range of operations (joins, filtering etc.), and methods (machine + deep learning, classifications, etc.). Basically, there is no limit to what you can do in GEE and it performs just as well, if not better in my opinion, than other applications.</p>
-<p>Simply put, GEE is great and I will never fail to be shocked at how easy it makes some otherwise really arduous tasks, purely through its seamless design and focus on data analysis rather than processing.</p>
-</section>
-<section id="applications" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">5.2</span> Applications</h2>
-<p>Upon reading the Week 5 practical content, I found myself distracted by the link to the GEE catalog - I had no idea that such a range of data was available! In particular, the <a href="https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD14A1">MODIS Thermal Anomalies &amp; Global Daily Fire</a> (1km) dataset (below) stood out to me as this links quite well with the policy recommendation I made last week (see Week 4 tab).</p>
+<section id="summary" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.1</span> Summary</h2>
+<p>This week we were discussing how to classify data and considered object based image analysis (OBIA) and sub-pixel analysis, before moving on to discuss measures of accuracy. I will summarise these below - I promise it will be more brief than last week!</p>
+<section id="object-based-image-analysis-obia" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="object-based-image-analysis-obia"><span class="header-section-number">7.1.1</span> Object based image analysis (OBIA)</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="MODIS.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Screenshot from the GEE catalog</figcaption>
+<p><img src="obia.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Screenshot of object based image analysis in action. Source: <a href="https://gisgeography.com/obia-object-based-image-analysis-geobia/">GIS Geography</a></figcaption>
 </figure>
 </div>
-<p>This dataset provides daily fire mask composites at a 1km resolution. The product allows users to distinguish between fire, no fire and no observation with ease and has a range of potential applications including:</p>
+<p>Essentially, this is when you analyse EO data by dividing the image into meaningful objects/segments rather than by processing individual pixels. This is conducted by considering shapes based on the similarity or difference between cells. Simple Linear Iterative Clustering (SLIC) is the most common method and works by laying a regular grid of points across an image and using this to calculate the distance from the point to the neighbouring pixel, making objects as it classifies across the image.</p>
+</section>
+<section id="sub-pixel-analysis" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="sub-pixel-analysis"><span class="header-section-number">7.1.2</span> Sub-pixel analysis</h3>
+<p>In instances where a singular pixel may be composed of various different land cover types, sub-pixel analysis can be used to support classification efforts. This technique is used to estimate the fraction of each pixel that is covered by different materials/land cover types. I really liked mention of the VIS model during this part of the lecture as I’d never heard about it before - it’s a conceptual framework used to describe the land types in urban environments that is underpinned by a premise that urban areas can be characterised by three main components: vegetation, impervious surfaces (eg. concrete) and soil.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="triangle.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">VIS model. Source: <a href="https://ieeexplore.ieee.org/document/1046852/">Plaza <em>et al.,</em></a>2002</figcaption>
+</figure>
+</div>
+</section>
+<section id="accuracy" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="accuracy"><span class="header-section-number">7.1.3</span> Accuracy</h3>
+<p>After discussing these, we were taught about how accuracy is measured in remote sensing and machine learning. At the end of the day, the things that are monitored are:</p>
 <ul>
-<li><p>Spatio-temporal fire monitoring across ecosystems</p></li>
-<li><p>Detecting changes in fire distribution</p></li>
-<li><p>Identification of new wildfires</p></li>
-<li><p>Observation of fire frequency/relative strength</p></li>
+<li><p>Producer accuracy: classification results meet creator expectations</p></li>
+<li><p>User’s accuracy: pixels incorrectly classified as a known class when they should’ve been classified as something else</p></li>
+<li><p>Overall accuracy</p></li>
 </ul>
-<p>Keen to combine the taught practical skills with my policy suggestion from Week 4, I decided to test whether the product might be a suitable choice for detecting fires in Nairobi that are responsible for lowering air quality. I downloaded a shapefile of Kenya’s administrative boundaries from <a href="https://gadm.org">GADM</a>, filtered the shapefile to obtain Nairobi’s outline (using QGIS to identify the boundary code) and uploaded this as an asset to GEE.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The Kenya boundary uploaded to my GEE assets (peep some of my past projects!)</figcaption>
-</figure>
-</div>
-<p>After this, I built upon the sample code provided to me in the GEE developers guide for the MODIS product, filtered my study area to Nairobi county boundaries and created a fire mask using the FireMask band.</p>
-<p><img src="code.png" class="img-fluid"></p>
-<p>However, it was only at this point after running the code and trialing different dates to call for MODIS data that I realised I’d made a fundamental mistake;</p>
-<p><img src="nairobi_fire.png" class="img-fluid"></p>
-<p>No matter which dates I selected, I couldn’t seem to detect fire across my study area, despite understanding that rubbish was burnt across the city almost constantly. It was only after I returned to the product specs that I realised why this was the case. The MODIS Terra product has a resolution of 1km, which is too large to detect local fires which occur on a much smaller scale. It is unlikely that even if a pixel has several fires within it, these fires will comprise the majority of the pixel and therefore GEE is unable to mask the surface properties accordingly. This was definitely a good reminder for me that even if you’ve got experience in remote sensing, image properties continue to catch you out at times!</p>
-<p>With the knowledge in mind that this product was more suited towards observation of large scale fires (typically wildfires/forestry related) than local incinerations, I sought out papers which had used the MODIS Terra data in the past to get a better sense of what it has/can be used for.</p>
-<p><a href="https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK">Habibie <em>et al.,</em></a>2021 stood out to me, describing a methodology which heralds GEE’s cloud computing capabilities in the use of MODIS14A1 composites to detect fires in real time across Indonesia’s forests. They describe how efficient techniques are essential in the identification of current fires given the ability for fires to change rapidly across space and time. In their research, the authors describe how GEE is specifically suited for this job; successfully identifying fire hotspots with ‘an appreciable prediction accuracy… quick and fast’. This conclusion is evident given the working pipeline they suggest for their methodology (below), which in just 5 steps allows fires to be identified.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="methodology.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption"><a href="https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK">Habibie <em>et al.,</em></a>. 2021 methodology pipeline</figcaption>
-</figure>
-</div>
-<p>Research by <a href="https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g">da Rocha Miranda <em>et al.,</em></a>2023 utilises a similar approach but more complex methodology to monitor and validate active fires using the MODIS product in GEE. Unlike <a href="https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK">Habibie <em>et al.,</em></a>this team combined several different products to model the surface of their study area (Brazil), and diagnose active fires by cross-examining data from different satellites (MODIS Sensor, MOD14A1 product active fire, and MCD64A1 product burn area images). Validation was then conducted using a range of equations (below).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="equations1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Equations underpinning the validation process used by <a href="https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g">da Rocha Miranda <em>et al.,</em></a>2023</figcaption>
-</figure>
-</div>
-<p>Whilst <a href="https://ieeexplore.ieee.org/abstract/document/9617260?casa_token=Fb8eDMC-KGkAAAAA:z4rY4eJySs3Yx5joZwaGTS8rfYG6seBzwbOgQ2-xIUExJp9uaK_t73ItEpZnB34sibfHULDK">Habibie <em>et al.,</em></a>2021’s research was focused more on exploring the potential use of GEE in forest fire observation tasks, <a href="https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g">da Rocha Miranda <em>et al.,</em></a>2023 sought to integrate their methodology/findings into the current approach used by members of the Brazilian Institute of Environment and Renewable <a href="#0" title="Learn more about Natural Resources from ScienceDirect's AI-generated Topic Pages">Natural Resources</a> who are responsible for monitoring and protecting the forest. What this demonstrates is that whilst GEE can be used to successfully detect fires through just a few lines of code, it can also support more complex monitoring/approaches. Thus, GEE’s true value lies in its simultaneously simple interface and robust applications/capabilities.</p>
+<p>As if remembering all of those isn’t enough to juggle, you also need to consider true positive/negative and false positive/negative when assessing a model’s performance.</p>
+<p>At this point, I was reassured to hear some discussion of things I have already become familiar with, like the benefits of cross validating classification models by splitting the dataset into training/testing sets. What was new to me however was the explanation of spatial cross-validation. This is a method used to evaluate the performance of spatial models, taking into account the spatial autocorrelation inherent in geographic data (hello, Tobler!). Unlike normal cross-validation, spatial cross-validation partitions the data into training and testing sets in a way that respects the spatial autocorrelation. This involves grouping together spatially close observations, ensuring that the training/testing sets are spatially separated. Ultimately, this ensures a more realistic assessment of the model’s performance when predicting outcomes for new and unseen locations.</p>
 </section>
-<section id="reflections" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">5.3</span> Reflections</h2>
-<p>I must admit, I feel slightly silly for not having realised before writing the code in GEE that the MODIS Terra product might not be suitable for my application. That being said, my mistakes took me back to week 1’s warnings that you need to always consider the specifications of a product when using it, and that a data product’s suitability is determined not simply by its application but also according to its spatial/spectral/temporal/radiometric qualities. No matter how much confidence or experience in remote sensing you might have, these mistakes can happen easily!</p>
-<p>Despite this set-back, I was encouraged by the readings I described above that outline how the product has incredibly valuable real-life applications and in particular, I found it really interesting to read about how the research by <a href="https://www.sciencedirect.com/science/article/pii/S0304380022003179?casa_token=WLwvGrR9EiQAAAAA:EGw1_b2lscGGUjksHWb-ASaqTf8ZiTOjj6Uu5TAZKcEt9DGZQMPyoDQNQ1IgmPmu8jgs8R173g">da Rocha Miranda <em>et al.,</em></a>2023 informed improvements in the Brazilian Institute’s approach to monitoring deadly forest fires. The capabilities of GEE are evident, both in the amount of data that can be accessed via it and the broad range of uses it has (from simple to much more complex processing). I fully believe that GEE and cloud computing more broadly is set to change research that uses remote sensing enormously, and perhaps most excitingly, expand the opportunities for non-specialists to quickly and easily engage with data and harness it for good. Returning to the case of Nairobi, I definitely believe GEE could represent a highly valuable tool in facilitating the use of remote sensing data for environmental monitoring at a low cost to suit the available budgets allocated by the government to enact policy such as the Air Quality Action Plan.</p>
 </section>
-<section id="references" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="references"><span class="header-section-number">5.4</span> References</h2>
+<section id="applications" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">7.2</span> Applications</h2>
+<p>Mentioned during the lecture for its arguably harsh title, I read <a href="https://link.springer.com/article/10.1007/s10994-021-05972-1">Karasiak et al.,</a>‘s 2021 paper ’Spatial dependence between training and test sets: another pitfall of classification accuracy assessment in remote sensing’. I found this paper really interesting and a perfect compliment to the week’s discussion of spatial autocorrelation’s effect on accuracy. The authors argue that all too often, spatial autocorrelation is not accounted for in image classification, leading to bias in accuracy metrics. They demonstrate this through experiments on Sentinel-2 data for forest classification that find the spatial leave-one-out cross-validation is the most accurate and least biased in it results.</p>
+<p>I found their argument very compelling - I hadn’t considered the potential effects of spatial autocorrelation on classification tasks, despite having run some ML models in the past at work. Clearly I am not alone in that however, and was amused to read the following section which demonstrated exactly that.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="excerpt.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Perhaps I was wrong for rolling my eyes at the constant reminders to keep Tobler’s first law in mind at all times!</figcaption>
+</figure>
+</div>
+<p>From this I was inspired to return to papers I had come across before to see whether or not spatial autocorrelation was accounted for in classification models that perhaps would’ve benefitted from them. One that I was reminded of was <a href="https://www.tandfonline.com/doi/epdf/10.1080/014311600210100?needAccess=true">Muchoney <em>et al.,</em></a>2002’s STEP model which impressively described site vegetation, environment and other biophysical parameters through its classification system. Whilst the paper is impressive in terms of the scope of mapping it permits as well as the ways in which it builds upon past similar studies, I realise now upon rereading it that it doesn’t acknowledge any potential effect of spatial dependence. Whether or not they <em>did</em> consider this I don’t know - what I do know however is that without mention of it in the methodology, I wonder what a difference it would’ve made on the model’s accuracy had they accounted for it. This is particularly relevant for this study as they seek to create a map of Central America which to me, sounds like it will indeed be affected by spatial autocorrelation.</p>
+<p>I assumed that perhaps more recent papers seeking to employ similar methodologies might differ and instead more obviously mention this potential study pitfall. However after reading through <a href="https://www.tandfonline.com/doi/epdf/10.1080/014311600210100?needAccess=true">Ganem <em>et al.,</em>’s</a> 2022 review of papers employing classification models to map South America’s drylands, this does not appear to be the case. Broadly, discourse appears to be dominated by discussion of comparing models and specifically, comparing their overall accuracy (%). Whilst this is important, I was surprised to see that no attention was paid to spatial cross-validation, and equally as surprised to see that reasons behind highly accurate models were not being attended to. Although getting a highly accurate score is undoubtedly important, I think that more studies should look backwards on a high score and consider what the reasons for it might be so as to ensure models are not benefiting from the effects of processes like spatial autocorrelation impacting testing/training sets and potentially increasing the accuracy of models.</p>
+</section>
+<section id="reflections" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">7.3</span> Reflections</h2>
+<p>If I’m being honest, I found this week’s content harder to work my way through than the weeks prior. Realistically, I think I probably saw the slides on accuracy and was slightly overwhelmed by the variety of different ways to measure accuracy, only to be thrown off further by the discussion of matrices which conceptually never come to me quite quick. That being said, I was excited by the spatial autocorrelation mention as this was something I really enjoyed learning about in CASA005 and in my Principles of Spatial Analysis course with Anwar Musah. I definitely know that next time I’m doing modelling with remote sensing I’ll bare it in mind, as I was dwelling on past projects I had done during my internships and realised never before had its potential effects been mentioned! I will also in future be thinking much more about my model accuracy scores and make sure that I trial different ways of boosting my study accuracy.</p>
+</section>
+<section id="references" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="references"><span class="header-section-number">7.4</span> References</h2>
 <ol type="1">
-<li>Google Earth Engine Data Catalog (2024) ‘MOD14A1.061: Terra Thermal Anomalies &amp; Fire Daily Global 1km’. Web page, available at: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD14A1</li>
-<li>Habibie, M.I., Nurda, N., Akbar, H.I., Bintoro, O.B., Arifandri, R., Ramadhana, N. (2021) ‘Real time monitoring fire detection using remote sensing’. <em>IEEE Asia-Pacific Conference on Geoscience, Electronics and Remote Sensing Technology,</em> vol.&nbsp;2, pp.&nbsp;28-32</li>
-<li>da Rocha Miranda, J., Juvanhol, R.S., da Silva, R.G. (2023) ‘Use of maximum entropy to improve validation and prediction of active fires in a Brazilian savanna region’. <em>Ecological Modelling,</em> vol.&nbsp;475.</li>
+<li><p>Ganem, K.A., Xue, Y., Rodrigues, A.A., Franca-Rocha, W., Oliviera, M.T., Carvalho, N.S., Cayo, E., Rosa, M., Dutra, A., Shimabukuro, Y.E. (2022) ‘Mapping South America’s drylands through remote sensing - A review of the methodological trends and current challenges’. <em>Remote Sensing,</em> vol.&nbsp;14, is. 3.</p></li>
+<li><p>GIS Geography (2023) ‘OBIA - Object-Based Image Analysis (GEOBIA)’. Web page, available at: https://gisgeography.com/obia-object-based-image-analysis-geobia/</p></li>
+<li><p>Karasiak, N., Dejoux, J.F., Monteil, C., Sheeren, D. (2021) ‘Spatial dependence between training and test sets: another pitfall of classification accuracy assessment in remote sensing’. <em>Machine Learning,</em> vol.&nbsp;111, pp.&nbsp;2715-2740.</p></li>
+<li><p>Muchoney, D., Borak, J., Chi, H., Friedl, M., Gopal, S., Hodges, J., Morrow, N., Strahler, A. (2000) ‘Application of the MODIS global supervised classification model to vegetation and land cover mapping of Central America’. <em>Int. Journal of Remote Sensing,</em> vol.&nbsp;21, no. 6 &amp; 7, pp.&nbsp;1115-1138</p></li>
+<li><p>Plaza, A., Martinez, P., Perez, R., Plaza, J. (2002) ‘Spatial/spectral endmember extraction by multidimensional morphological operations’. <em>IEEE Transactions on Geoscience and Remote Sensing,</em> vol.&nbsp;40, no. 9, pp.&nbsp;2025-2041</p></li>
 </ol>
 
 
@@ -499,13 +495,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week4.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy</span></span>
+      <a href="./week6.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Classification (i)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week6.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Classification (i)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./week8.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">SAR</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
