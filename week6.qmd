@@ -8,7 +8,7 @@ This week we were introduced to the principles and methods of classification in 
 
 In the context of remote sensing, classification is the process of categorising all pixels in an image into classes or themes based on their spectral signatures. Often, this is used to label different land cover types/change, described by [Talukdar *et al.,*](https://www.mdpi.com/2072-4292/12/7/1135)2020 as being an 'increasingly essential aspect of activities and applications, such as in planning for land use or global warming mitigation'. [Gómez-Chova *et al.,*](https://ieeexplore.ieee.org/abstract/document/7182258?casa_token=gJZrdw6s9zEAAAAA:I3bhaLbOuD4zm-Ljw22Ex9jS8tgPcji188UW7pGsOhRi8MrkVMXpB283jypHaMnYsqvb2tE_)2015 consolidate this, arguing that 'among all the products that can be obtained from the acquired images, classification maps are perhaps the most relevant ones', as 'land-cover and land-use maps are mandatory in multitemporal studies and constitute useful inputs to processes such as the modeling of climate change, the study of oceanic currents, arctic studies, or postcatastrophe deployments.'
 
-### What are the different approaches to classifying surface types? 
+### What are the different approaches to classifying surface types?
 
 1.  Expert systems
 
@@ -38,7 +38,7 @@ CART is a generic term for two types of decision trees; classification and regre
 
 They are decision trees where each fork is split into a predictor variable and each node has a prediction for the target variable at the end. Nodes are split into sub-nodes based on a threshold value of an attribute. The root node is taken as the training set and is split into two by considering the best attribute and threshold value. Further, the subsets are also split using the same logic. This continues till the last pure sub-set is found in the tree or the maximum number of leaves possible in that growing tree.
 
-![CART diagram. Source: [Freie Universität Berlin](https://www.geo.fu-berlin.de/en/v/geo-it/gee/3-classification/3-1-methodical-background/3-1-1-cart/index.html), 2019 ](CART.png)
+![CART diagram. Source: [Freie Universität Berlin](https://www.geo.fu-berlin.de/en/v/geo-it/gee/3-classification/3-1-methodical-background/3-1-1-cart/index.html), 2019](CART.png)
 
 CART algorithms use Gini impurity to decide where to split the data. The algorithm iteratively divides the dataset into smaller subsets, choosing splits that decrease Gini impurity, aiming for homogenous nodes. This process continues until a stopping criterion is met, creating a tree where each leaf represents a predicted class or value, effectively using Gini impurity as a guide to build a model that can classify new instances. Unlike linear regression, where you seek a single coefficient used to estimate the slope of a relationship, CART provides a series of mean values for subsets of the dataset, making it suitable when dealing with non-linear datasets.
 
