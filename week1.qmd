@@ -4,7 +4,7 @@
 
 This lecture felt like it very much served as a 'Remote sensing 101'; we looked at what remote sensing actually is, the two different kinds of sensors (passive versus active), the ways in which data collected by sensors interact with both the earth and the atmosphere and finally the 4 resolutions of remotely sensed data. All of this was used to demonstrate that there is no one sensor for all applications - the kind of research you're undertaking will dictate which sensor and what kind of data is appropriate. To consolidate what we learnt in class, I produced a summary sheet of the taught content, displayed below.
 
-![Week 1 summary sheet](week1_summary.png)
+![Week 1 summary sheet. Image available on GitHub [here](https://github.com/DKPW9/Learning-Diary/blob/main/week1_summary.png).](week1_summary.png)
 
 ## Applications
 
