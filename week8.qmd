@@ -4,7 +4,7 @@
 
 This week we pivoted from passive optical images to another type of remote sensing; synthetic aperture radar aka SAR! SAR sensors produce their own energy and then record the amount of that energy reflected back after interacting with the Earth, requiring a unique way of interpreting the data as the signal obtained is responsible to surface characteristics like topography and moisture. To summarise this week's content I returned to a handwritten approach (as used in weeks 1 and 3) which is pictured below.
 
-![Week 8 SAR summary](week8_summary.jpg)
+![Week 8 SAR summary. Image available on GitHub [here](https://github.com/DKPW9/Learning-Diary/blob/main/week8_summary.jpg).](week8_summary.jpg)
 
 The key things to remember from this week's content serve as the subheadings in the above mind map. I was particularly excited to finally experience that penny-drop feeling when realising that several papers I had read over the past few weeks had utilised SAR data, celebrating its strengths over optical data for certain applications (specifically for night-time monitoring + observations over frequently cloudy study sites). That was probably what I found most interesting from this week's content - understanding the humongous potential for observation when using a combination of both passive and active sensor data in research! That, and of course discussion of interferometry. Having worked on a 2-man interferometry team at a job I had in London last summer, I think I'll be forever amazed by not only the power it holds for obtaining incredibly precise ground measurements, but also by the crazy rainbow appearance of an inteferogram.
 
